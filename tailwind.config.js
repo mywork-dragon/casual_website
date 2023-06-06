@@ -10,22 +10,25 @@ module.exports = {
         primary: {
           500: "#99F876",
         },
+        secondary: {
+          500: "#e5e9ea",
+        },
         text: {
           100: "#2F4857",
           300: "#21282B"
         },
       },
-      fontFamily: {
-        'inter': ['Inter', 'inter', 'sans-serif'],
-        'lora': ['Lora', 'serif'],
-      },
       boxShadow: {
-        "nav": "0px 4px 5px rgba(0, 0, 0, 0.06)"
+        "nav": "0px 4px 5px rgba(0, 0, 0, 0.06)",
+        "card": "-9px 14px 36px rgba(0, 0, 0, 0.12)",
+        input: "-4px 6px 16px rgba(0, 0, 0, 0.12)",
       },
       fontSize: {
         "us": "13px",
+        "15": "15px",
         "4.5xl": "40px",
         "xxs": "11px",
+        "3.5xl": "32px",
       },
       lineHeight: {
         "11.5": "45px",

@@ -1,5 +1,8 @@
+import Banner from "@/components/Landing/Banner";
 import FeatureSection from "@/components/Landing/FeatureSection";
 import Hero from "@/components/Landing/Hero";
+import HowItWorks from "@/components/Landing/HowItWorks";
+import ProductTeam from "@/components/Landing/ProductTeam";
 import Testimonial from "@/components/Landing/Testimonial";
 import Layout from "@/components/Layout";
 import React from "react";
@@ -58,6 +61,9 @@ const LandingPage = () => {
           );
         })}
       </div>
+      <HowItWorks />
+      <ProductTeam />
+      <Banner />
     </Layout>
   );
 };
