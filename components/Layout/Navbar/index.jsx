@@ -1,7 +1,8 @@
 import StyledLink from "@/components/Button/Link";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "./Dropdown";
+import Sidebar from "./Sidebar";
 
 const navItems = [
   "PRODUCT",
@@ -17,16 +18,17 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
   return (
     <nav className="w-full shadow-nav bg-white">
-      <div className="w-full max-w-7xl px-5 sm:px-6 md:px-9 xl:px-6 mx-auto">
+      <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="w-full flex justify-between items-center max-h-[65px]">
           <div className="flex items-center flex-1">
             <img
               src="/images/logo.png"
               className="w-[103px] h-auto object-cover"
             />
-            <div className="flex items-center space-x-9 ml-10">
+            <div className="hidden lg:flex items-center space-x-9 ml-10">
               {navItems.map((item, index) => {
                 if (typeof item === "string") {
                   const href = item.toLowerCase().replace(" ", "-");
@@ -42,7 +44,7 @@ const Navbar = () => {
               })}
             </div>
           </div>
-          <div className="flex items-center space-x-9">
+          <div className="hidden lg:flex items-center space-x-9">
             <Link href="/login">
               <a className="uppercase text-text-300 text-us leading-4 font-bold hover:text-primary-500">
                 Login
@@ -50,6 +52,30 @@ const Navbar = () => {
             </Link>
             <StyledLink>Book Demo</StyledLink>
           </div>
+          <button
+            className="flex lg:hidden"
+            onClick={() => setShowSidebar(!showSidebar)}
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M4 24H26V21.9361H4V24ZM4 16.0319H26V13.9681H4V16.0319ZM4 6V8.06389H26V6H4Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          {showSidebar && (
+            <div className="lg:hidden">
+              <Sidebar navItems={navItems} setShowSidebar={setShowSidebar} />
+            </div>
+          )}
         </div>
       </div>
     </nav>

@@ -1,31 +1,29 @@
 import RoundedButton from "@/components/Button/Rounded";
+import TextGraphic from "@/components/TextGraphic";
 import React from "react";
 
 const ProductTeam = () => {
   return (
-    <div className="w-full mt-24">
-      <div className="w-full max-w-7xl px-5 sm:px-6 md:px-9 xl:px-6 mx-auto">
+    <div className="w-full mt-12 sm:mt-24">
+      <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="text-center">
-          <h2 className="font-bold text-4.5xl leading-11.5 text-text-300">
+          <h2 className="font-bold text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
             Why product<br></br>
-            <u className="underline-offset-[1px] decoration-[#99F876]">
-              teams love
-            </u>{" "}
-            Causal
+            <TextGraphic>teams love</TextGraphic> Causal
           </h2>
         </div>
-        <div className="w-full flex justify-center items-start mt-24">
+        <div className="w-full flex flex-col md:flex-row justify-center items-start mt-12 sm:mt-16 md:mt-24">
           <div className="relative">
             <img
               src="/images/productGraphic1.png"
-              className="max-w-sm h-auto object-cover"
+              className="sm:max-w-sm h-auto object-cover"
             />
             <div className="absolute top-10 left-8">
-              <p className="font-lora font-normal leading-6 text-base text-text-300 -rotate-2">
+              <p className="font-lora font-normal leading-6 text-xs sm:text-base text-text-300 -rotate-2">
                 “Causal makes it easy to make good<br></br> decisions based on
                 good data.”
               </p>
-              <p className="font-bold mt-2 text-base leading-6 text-text-300 -rotate-2">
+              <p className="font-bold mt-1 sm:mt-2 text-xs sm:text-base leading-6 text-text-300 -rotate-2">
                 Bade Adebayo<br></br>
                 Staff Software Engineer, Summari
               </p>
@@ -37,23 +35,23 @@ const ProductTeam = () => {
               />
             </div>
           </div>
-          <div className="relative mt-36 -left-24">
+          <div className="relative md:mt-36 md:-left-24">
             <img
               src="/images/productGraphic2.png"
-              className="max-w-sm h-auto object-cover z-10"
+              className="sm:max-w-sm h-auto object-cover z-10"
             />
             <div className="absolute top-12 left-6">
-              <p className="font-lora font-normal leading-6 text-base text-text-300 rotate-3 max-w-xs">
+              <p className="font-lora font-normal leading-6 text-xs sm:text-base text-text-300 rotate-3 max-w-xs">
                 Our front-end team needed some help with how to run experiments
                 rigorously and [Causal] provides a framework, this is a huge
                 win.”
               </p>
-              <p className="font-bold mt-2 text-base leading-6 text-text-300 rotate-3">
+              <p className="font-bold mt-1 sm:mt-2 text-xs sm:text-base leading-6 text-text-300 rotate-3">
                 Tony Deigh<br></br>
                 Co-Founder & Chief Data Officer, JobCase
               </p>
             </div>
-            <div className="absolute -right-32 -top-20 z-[-1]">
+            <div className="absolute -right-2 sm:-right-32 -top-20 z-[-1]">
               <img
                 src="/images/person2.png"
                 className="max-w-[254px] h-auto object-cover"
@@ -61,14 +59,14 @@ const ProductTeam = () => {
             </div>
           </div>
         </div>
-        <div className="text-center mt-16">
-          <h2 className="font-bold text-3.5xl text-text-300 leading-9">
+        <div className="text-center mt-44 sm:mt-56 md:mt-16">
+          <h2 className="font-bold text-sm leading-5 sm:text-2xl md:text-3xl lg:text-3.5xl text-text-300 sm:leading-9">
             Build, ship and optimize consumer tech products<br></br>
-            <u className="underline-offset-[1px] decoration-[#99F876]">
+            <TextGraphic>
               without stitching together half a dozen tools
-            </u>
+            </TextGraphic>
           </h2>
-          <div className="mt-10 flex justify-center items-center space-x-8">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-8 sm:space-y-0 sm:space-x-8">
             <RoundedButton>Book Demo</RoundedButton>
             <RoundedButton secondary>Try It Out</RoundedButton>
           </div>
