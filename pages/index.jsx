@@ -6,6 +6,7 @@ import ProductTeam from "@/components/Landing/ProductTeam";
 import Testimonial from "@/components/Landing/Testimonial";
 import Layout from "@/components/Layout";
 import TextGraphic from "@/components/TextGraphic";
+import Head from "next/head";
 import React from "react";
 
 const sections = [
@@ -43,6 +44,12 @@ const sections = [
 const LandingPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>
+          Causal: Feature flagging and A/B testing software for product dev
+          teams
+        </title>
+      </Head>
       <Hero />
       <Testimonial />
       <div className="space-y-12 mt-12 sm:space-y-20 sm:mt-32">

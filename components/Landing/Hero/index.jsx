@@ -18,8 +18,8 @@ const Hero = () => {
               software.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center space-y-5 sm:space-y-0 sm:space-x-10">
-              <RoundedButton>Book Demo</RoundedButton>
-              <RoundedButton secondary>Try It Out</RoundedButton>
+              <RoundedButton href="https://book.vimcal.com/p/christina/45minutes-0571c">Book Demo</RoundedButton>
+              <RoundedButton secondary href="https://tools.causallabs.io/signup">Try It Out</RoundedButton>
             </div>
           </div>
           <div className="lg:max-w-xl">

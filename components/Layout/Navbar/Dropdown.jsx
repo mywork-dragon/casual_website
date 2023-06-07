@@ -49,13 +49,16 @@ const Dropdown = ({ item }) => {
       {isDropdownOpen && (
         <div className="absolute w-full left-0 top-10 bg-white shadow-nav rounded-md flex flex-col py-3 min-w-[200px] px-4 space-y-4">
           {options.map((option, index) => {
-            const href = option.toLowerCase().replace(" ", "-");
             return (
-              <Link key={index} href={`#${href}`}>
-                <a className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap">
-                  {option}
-                </a>
-              </Link>
+              <a
+                key={index}
+                href={`${option.href}`}
+                target="_blank"
+                rel="noreferrer"
+                className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
+              >
+                {option.name}
+              </a>
             );
           })}
         </div>

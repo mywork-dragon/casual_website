@@ -96,7 +96,7 @@ const HowItWorks = () => {
                   </div>
                 );
               })}
-              <div className="!mt-12">
+              <div className="!mt-12 hidden">
                 <RoundedButton>Learn More</RoundedButton>
               </div>
             </div>
@@ -118,7 +118,7 @@ const HowItWorks = () => {
                   Everything you need to build, ship and optimize your consumer
                   tech products without bugging engineering.
                 </p>
-                <div className="mt-6 sm:mt-12">
+                <div className="mt-6 sm:mt-12 hidden">
                   <RoundedButton>LEARN MORE</RoundedButton>
                 </div>
               </div>

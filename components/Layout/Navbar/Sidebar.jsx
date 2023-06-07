@@ -28,7 +28,7 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
             </button>
           </div>
           <div className="w-full flex flex-col items-start space-y-8 mt-12 max-h-[calc(100vh-100px)] overflow-auto">
-            {[...navItems, "login"].map((item, index) => {
+            {navItems.map((item, index) => {
               if (typeof item === "string") {
                 const href = item.toLowerCase().replace(" ", "-");
                 return (
@@ -40,18 +40,36 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
                 );
               }
               return item.options.map((option, subIndex) => {
-                const href = option.toLowerCase().replace(" ", "-");
                 return (
-                  <Link key={index + "" + subIndex} href={`#${href}`}>
-                    <a className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500">
-                      {option}
-                    </a>
-                  </Link>
+                  <a
+                    href={option.href}
+                    key={index + "-" + subIndex}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
+                  >
+                    {option.name}
+                  </a>
                 );
               });
             })}
             <div className="w-full">
-              <StyledLink fullWidth>Book Demo</StyledLink>
+              <a
+                href="https://tools.causallabs.io/"
+                target="_blank"
+                rel="noreferrer"
+                className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
+              >
+                Login
+              </a>
+            </div>
+            <div className="w-full">
+              <StyledLink
+                fullWidth
+                href="https://book.vimcal.com/p/christina/45minutes-0571c"
+              >
+                Book Demo
+              </StyledLink>
             </div>
           </div>
         </div>

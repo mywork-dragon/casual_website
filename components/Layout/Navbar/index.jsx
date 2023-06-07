@@ -5,16 +5,22 @@ import Dropdown from "./Dropdown";
 import Sidebar from "./Sidebar";
 
 const navItems = [
-  "PRODUCT",
-  "CASE STUDIES",
+  // "PRODUCT",
+  // "CASE STUDIES",
   {
     name: "RESOURCES",
-    options: ["DOCS", "BLOG"],
+    options: [
+      {
+        name: "DOCS",
+        href: "https://tech.causallabs.io/"
+      },
+      // "BLOG"
+    ],
   },
-  {
-    name: "COMPANY",
-    options: ["PRODUCT", "ABOUT", "CONTACT", "CAREERS", "PRIVACY POLICY"],
-  },
+  // {
+  //   name: "COMPANY",
+  //   options: ["PRODUCT", "ABOUT", "CONTACT", "CAREERS", "PRIVACY POLICY"],
+  // },
 ];
 
 const Navbar = () => {
@@ -45,12 +51,17 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden lg:flex items-center space-x-9">
-            <Link href="/login">
-              <a className="uppercase text-text-300 text-us leading-4 font-bold hover:text-primary-500">
-                Login
-              </a>
-            </Link>
-            <StyledLink>Book Demo</StyledLink>
+            <a
+              href="https://tools.causallabs.io/"
+              target="_blank"
+              rel="noreferrer"
+              className="uppercase text-text-300 text-us leading-4 font-bold hover:text-primary-500"
+            >
+              Login
+            </a>
+            <StyledLink href="https://book.vimcal.com/p/christina/45minutes-0571c">
+              Book Demo
+            </StyledLink>
           </div>
           <button
             className="flex lg:hidden"

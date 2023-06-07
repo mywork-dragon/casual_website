@@ -8,8 +8,8 @@ const ProductTeam = () => {
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="text-center">
           <h2 className="font-bold text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
-            Why product<br></br>
-            <TextGraphic>teams love</TextGraphic> Causal
+            Why product dev<br></br>
+            teams <TextGraphic>love</TextGraphic> Causal
           </h2>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center items-start mt-12 sm:mt-16 md:mt-24">
@@ -67,8 +67,12 @@ const ProductTeam = () => {
             </TextGraphic>
           </h2>
           <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-8 sm:space-y-0 sm:space-x-8">
-            <RoundedButton>Book Demo</RoundedButton>
-            <RoundedButton secondary>Try It Out</RoundedButton>
+            <RoundedButton href="https://book.vimcal.com/p/christina/45minutes-0571c">
+              Book Demo
+            </RoundedButton>
+            <RoundedButton secondary href="https://tools.causallabs.io/signup">
+              Try It Out
+            </RoundedButton>
           </div>
         </div>
       </div>
