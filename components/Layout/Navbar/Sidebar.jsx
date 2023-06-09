@@ -44,7 +44,7 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
                   <a
                     href={option.href}
                     key={index + "-" + subIndex}
-                    target="_blank"
+                    target={option?.href?.startsWith("/") ? "_self" : "_blank"}
                     rel="noreferrer"
                     className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
                   >

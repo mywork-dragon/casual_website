@@ -53,7 +53,7 @@ const Dropdown = ({ item }) => {
               <a
                 key={index}
                 href={`${option.href}`}
-                target="_blank"
+                target={option?.href?.startsWith("/") ? "_self" : "_blank"}
                 rel="noreferrer"
                 className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
               >

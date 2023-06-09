@@ -7,7 +7,11 @@ const footerItems = [
       name: "Product",
       href: "/product",
     },
-    // "About", "Contact", "Careers"
+    {
+      name: "About",
+      href: "/about",
+    }, 
+    // "Contact", "Careers"
   ],
   [
     {

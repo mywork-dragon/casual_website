@@ -17,10 +17,17 @@ const navItems = [
       // "BLOG"
     ],
   },
-  // {
-  //   name: "COMPANY",
-  //   options: ["PRODUCT", "ABOUT", "CONTACT", "CAREERS", "PRIVACY POLICY"],
-  // },
+  {
+    name: "COMPANY",
+    options: [
+      // "PRODUCT",
+      {
+        name: "ABOUT",
+        href: "/about",
+      },
+      // "CONTACT", "CAREERS", "PRIVACY POLICY"
+    ],
+  },
 ];
 
 const Navbar = () => {
