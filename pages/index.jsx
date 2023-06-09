@@ -1,10 +1,9 @@
-import Banner from "@/components/Landing/Banner";
-import FeatureSection from "@/components/Landing/FeatureSection";
+import BuildShip from "@/components/BuildShip";
+import FeatureSection from "@/components/FeatureSection";
 import Hero from "@/components/Landing/Hero";
 import HowItWorks from "@/components/Landing/HowItWorks";
 import ProductTeam from "@/components/Landing/ProductTeam";
 import Testimonial from "@/components/Landing/Testimonial";
-import Layout from "@/components/Layout";
 import TextGraphic from "@/components/TextGraphic";
 import Head from "next/head";
 import React from "react";
@@ -43,7 +42,7 @@ const sections = [
 
 const LandingPage = () => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>
           Causal: Feature flagging and A/B testing software for product dev
@@ -62,8 +61,8 @@ const LandingPage = () => {
       </div>
       <HowItWorks />
       <ProductTeam />
-      <Banner />
-    </Layout>
+      <BuildShip />
+    </>
   );
 };
 

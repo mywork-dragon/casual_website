@@ -32,7 +32,7 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
               if (typeof item === "string") {
                 const href = item.toLowerCase().replace(" ", "-");
                 return (
-                  <Link key={index} href={`#${href}`}>
+                  <Link key={index} href={`${href}`}>
                     <a className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500">
                       {item}
                     </a>

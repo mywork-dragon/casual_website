@@ -15,35 +15,47 @@ import "@/css/lineicons.css";
 import "@/css/tiny-slider.min.css";
 import "@/css/main.css";
 import "@/css/global.css";
+import Navbar from "@/components/Layout/Navbar";
+import Footer from "@/components/Layout/Footer";
+import Banner from "@/components/Layout/Banner";
 
 function MyApp({ Component, pageProps, mainMenu }) {
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
-  const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
+  // const [isLoading, setIsLoading] = useState(false);
+  // const router = useRouter();
+  // const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
 
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.js");
+  // useEffect(() => {
+  //   import("bootstrap/dist/js/bootstrap.js");
 
-    const showLoader = () => {
-      setIsLoading(true);
-    };
+  //   const showLoader = () => {
+  //     setIsLoading(true);
+  //   };
 
-    const removeLoader = () => {
-      setIsLoading(false);
-    };
+  //   const removeLoader = () => {
+  //     setIsLoading(false);
+  //   };
 
-    Router.events.on("routeChangeStart", showLoader);
-    Router.events.on("routeChangeComplete", removeLoader);
-    Router.events.on("routeChangeError", removeLoader);
+  //   Router.events.on("routeChangeStart", showLoader);
+  //   Router.events.on("routeChangeComplete", removeLoader);
+  //   Router.events.on("routeChangeError", removeLoader);
 
-    return () => {
-      Router.events.off("routeChangeStart", showLoader);
-      Router.events.off("routeChangeComplete", removeLoader);
-      Router.events.off("routeChangeError", removeLoader);
-    };
-  }, [authToken, router]);
+  //   return () => {
+  //     Router.events.off("routeChangeStart", showLoader);
+  //     Router.events.off("routeChangeComplete", removeLoader);
+  //     Router.events.off("routeChangeError", removeLoader);
+  //   };
+  // }, [authToken, router]);
 
-  const pageLayout = <Component {...pageProps} />;
+  const pageLayout = (
+    <div className="w-full min-h-screen font-inter">
+      <Navbar />
+      <div className="w-full min-h-screen overflow-x-hidden">
+        <Component {...pageProps} />
+      </div>
+      <Banner />
+      <Footer />
+    </div>
+  );
 
   return (
     <>
@@ -86,9 +98,9 @@ function MyApp({ Component, pageProps, mainMenu }) {
         />
       </Head>
 
-      {isLoading && <Preloader></Preloader>}
-
-      {!isLoading && pageLayout}
+      {/* {isLoading && <Preloader></Preloader>} */}
+      {pageLayout}
+      {/* {!isLoading && pageLayout} */}
     </>
   );
 }

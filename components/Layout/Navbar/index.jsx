@@ -5,14 +5,14 @@ import Dropdown from "./Dropdown";
 import Sidebar from "./Sidebar";
 
 const navItems = [
-  // "PRODUCT",
+  "PRODUCT",
   // "CASE STUDIES",
   {
     name: "RESOURCES",
     options: [
       {
         name: "DOCS",
-        href: "https://tech.causallabs.io/"
+        href: "https://tech.causallabs.io/",
       },
       // "BLOG"
     ],
@@ -26,20 +26,24 @@ const navItems = [
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
-    <nav className="w-full shadow-nav bg-white">
+    <nav className="w-full shadow-nav bg-white top-0 sticky z-50">
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="w-full flex justify-between items-center max-h-[65px]">
           <div className="flex items-center flex-1">
-            <img
-              src="/images/logo.png"
-              className="w-[103px] h-auto object-cover"
-            />
+            <Link href="/">
+              <a>
+                <img
+                  src="/images/logo.png"
+                  className="w-[103px] h-auto object-cover"
+                />
+              </a>
+            </Link>
             <div className="hidden lg:flex items-center space-x-9 ml-10">
               {navItems.map((item, index) => {
                 if (typeof item === "string") {
                   const href = item.toLowerCase().replace(" ", "-");
                   return (
-                    <Link key={index} href={`#${href}`}>
+                    <Link key={index} href={`/${href}`}>
                       <a className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500">
                         {item}
                       </a>

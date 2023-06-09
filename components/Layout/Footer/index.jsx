@@ -2,7 +2,13 @@ import React from "react";
 import Link from "next/link";
 
 const footerItems = [
-  // ["Product", "About", "Contact", "Careers"],
+  [
+    {
+      name: "Product",
+      href: "/product",
+    },
+    // "About", "Contact", "Careers"
+  ],
   [
     {
       name: "DOCS",
@@ -25,7 +31,7 @@ const Footer = () => {
                 {item.map((subItem, subIndex) => (
                   <a
                     key={subItem + "" + subIndex}
-                    target="_blank"
+                    target={subItem?.href?.startsWith("/") ? "_self" : "_blank"}
                     rel="noreferrer"
                     href={subItem.href}
                     className="font-bold text-xxs leading-4.5 uppercase text-text-300 hover:text-primary-500"
