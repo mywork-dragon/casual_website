@@ -31,6 +31,7 @@ const TechStack = () => {
           {logos.map((logo, index) => (
             <img
               key={index + logo}
+              style={{ maxWidth: logo === "AWS" ? "71px" : "" }}
               src={`/images/product/${logo}.png`}
               className="max-w-[120px] h-auto object-contain mt-12"
             />
