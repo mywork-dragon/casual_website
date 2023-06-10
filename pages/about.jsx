@@ -21,7 +21,7 @@ const AboutPage = () => {
       <FoundingTeam />
       <Investors />
       <ProductTeam />
-      <BuildShip />
+      <BuildShip about />
     </>
   );
 };

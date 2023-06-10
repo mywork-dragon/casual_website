@@ -14,7 +14,7 @@ const Description = () => {
           </p>
         </div>
         <div className="w-full">
-          <p className="font-lora text-lg leading-7 text-text-100 mt-3 sm:!mt-5 lg:!mt-10">
+          <p className="font-lora !text-center lg:!text-left text-lg leading-7 text-text-100 mt-3 sm:!mt-5 lg:!mt-10">
             Causal’s founding team hails from TripAdvisor, the world's largest
             travel guidance platform and data-oriented company that iterates
             rapidly to improve their products. At TripAdvisor, we spent an
@@ -33,7 +33,7 @@ const Description = () => {
           </p>
         </div>
         <div className="w-full">
-          <p className="font-lora text-lg leading-7 text-text-100 mt-3 sm:!mt-5 lg:!mt-10">
+          <p className="font-lora !text-center lg:!text-left text-lg leading-7 text-text-100 mt-3 sm:!mt-5 lg:!mt-10">
             Causal’s founding team hails from TripAdvisor, the world's largest
             travel guidance platform and data-oriented company that iterates
             rapidly to improve their products. At TripAdvisor, we spent an

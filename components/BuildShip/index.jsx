@@ -2,9 +2,13 @@ import React from "react";
 import TextGraphic from "../TextGraphic";
 import RoundedButton from "../Button/Rounded";
 
-const BuildShip = () => {
+const BuildShip = ({ about = false }) => {
+  let spacingStyles = "mt-44 sm:mt-56 md:mt-16";
+  if (about) {
+    spacingStyles = "!mt-4 md:!mt-16";
+  }
   return (
-    <div className="text-center mt-44 sm:mt-56 md:mt-16">
+    <div className={`text-center ${spacingStyles}`}>
       <h2 className="font-bold text-sm leading-5 sm:text-2xl md:text-3xl lg:text-3.5xl text-text-300 sm:leading-9">
         Build, ship and optimize consumer tech products<br></br>
         <TextGraphic>without stitching together half a dozen tools</TextGraphic>

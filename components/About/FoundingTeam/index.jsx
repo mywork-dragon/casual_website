@@ -8,7 +8,7 @@ const FoundingTeam = () => {
         <h2 className="text-text-300 text-2xl leading-8 sm:text-4.5xl sm:leading-11.5 font-extrabold">
           Our <TextGraphic>Founding Team</TextGraphic>
         </h2>
-        <div className="grid grid-cols-3 mt-4 sm:!mt-6 md:!mt-10 lg:!mt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 sm:!mt-6 md:!mt-10 lg:!mt-14">
           <div className="flex">
             <img
               src="/images/about/Alex.png"
@@ -29,7 +29,7 @@ const FoundingTeam = () => {
               className="max-w-[282px] h-auto object-cover"
             />
           </div>
-          <div className="flex flex-row-reverse">
+          <div className="flex flex-row-reverse mt-6 lg:mt-0">
             <img
               src="/images/about/Christina.png"
               className="max-w-[186px] h-auto object-cover mt-12"
@@ -44,7 +44,7 @@ const FoundingTeam = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex w-full lg:w-auto justify-between items-center">
           <div className="flex mt-4 sm:!mt-8 md:!mt-12 lg:!mt-20 flex-row-reverse">
             <img
               src="/images/about/Jeff.png"
