@@ -14,13 +14,23 @@ const FoundingTeam = () => {
               src="/images/about/Alex.png"
               className="max-w-[186px] h-auto object-cover mt-12"
             />
-            <div className="text-center relative -left-16">
-              <h3 className="font-bold uppercase text-xl leading-6 text-text-300">
+            <div className="text-center flex flex-col items-center relative -left-8 sm:-left-16">
+              <h3 className="font-bold whitespace-nowrap uppercase text-xl leading-6 text-text-300">
                 ALEX MAY
               </h3>
               <p className="text-text-100 font-lora font-normal text-sm leading-4 text-center">
                 Co-Founder and VP Engineering<br></br>Ex-TripAdvisor
               </p>
+              <a
+                className="mt-2"
+                href="https://www.linkedin.com/in/alexandermay"
+                target="_blank"
+              >
+                <img
+                  src="/images/linkedin.png"
+                  className="w-14 h-auto object-cover"
+                />
+              </a>
             </div>
           </div>
           <div className="flex items-end justify-center">
@@ -34,13 +44,23 @@ const FoundingTeam = () => {
               src="/images/about/Christina.png"
               className="max-w-[186px] h-auto object-cover mt-12"
             />
-            <div className="text-center relative left-16">
+            <div className="text-center relative left-28 sm:left-16">
               <h3 className="font-bold text-xl uppercase leading-6 text-text-300 whitespace-nowrap">
                 Christina Pawlikowski
               </h3>
               <p className="text-text-100 font-lora font-normal text-sm leading-4 text-center">
                 Co-Founder and CEO<br></br>Ex-TripAdvisor
               </p>
+              <a
+                className="mt-2"
+                href="https://www.linkedin.com/in/cpawlikowski"
+                target="_blank"
+              >
+                <img
+                  src="/images/linkedin.png"
+                  className="w-14 h-auto object-cover"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -50,14 +70,24 @@ const FoundingTeam = () => {
               src="/images/about/Jeff.png"
               className="max-w-[186px] h-auto object-cover mt-12"
             />
-            <div className="text-center relative left-16">
-              <h3 className="font-bold uppercase text-xl leading-6 text-text-300">
+            <div className="text-center relative !left-8 sm:!left-16">
+              <h3 className="font-bold whitespace-nowrap uppercase text-xl leading-6 text-text-300">
                 Jeff Palmucci
               </h3>
               <p className="text-text-100 font-lora font-normal text-sm leading-4 text-center">
                 Co-Founder and CTO<br></br>
                 Ex-TripAdvisor
               </p>
+              <a
+                className="mt-2"
+                href="https://www.linkedin.com/in/jeff-palmucci-08042b16"
+                target="_blank"
+              >
+                <img
+                  src="/images/linkedin.png"
+                  className="w-14 h-auto object-cover"
+                />
+              </a>
             </div>
           </div>
         </div>

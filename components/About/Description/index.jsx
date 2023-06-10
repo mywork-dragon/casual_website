@@ -9,8 +9,13 @@ const Description = () => {
           <p className="text-2xl font-bold text-text-300 italic">
             Instead of spending time cleaning up messy data, teams should be
             spending time on things that will{" "}
-            <TextGraphic>create a competitive advantage</TextGraphic> for the
-            company.
+            <span className="sm:hidden">
+              create a competitive <TextGraphic>advantage</TextGraphic>
+            </span>
+            <span className="hidden sm:inline-block">
+              <TextGraphic>create a competitive advantage</TextGraphic>
+            </span>{" "}
+            for the company.
           </p>
         </div>
         <div className="w-full">

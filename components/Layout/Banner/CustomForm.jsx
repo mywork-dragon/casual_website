@@ -37,7 +37,7 @@ const CustomForm = ({ status, message, onValidated }) => {
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
           target="_self"
-          className="w-full sm:w-4/5 md:w-full h-12 sm:h-9 md:h-10 lg:h-[50px] bg-white p-0.5 pl-4 sm:pl-8 rounded-[53px] shadow-input flex items-center justify-between validate"
+          className="w-full !border sm:!border-none !border-black sm:w-4/5 md:w-full h-12 sm:h-9 md:h-10 lg:h-[50px] bg-white p-0.5 pl-4 sm:pl-8 rounded-[53px] shadow-input flex items-center justify-between validate"
         >
           <div className="w-full mr-4">
             <input

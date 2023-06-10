@@ -28,7 +28,7 @@ const Investors = () => {
               <div className="bg-white shadow-card flex justify-center items-center rounded-xl w-full py-10 -rotate-1">
                 <img
                   src="/images/about/founder.png"
-                  className="max-w-[91px] w-full h-auto object-cover -rotate-1"
+                  className="max-w-[167px] w-full h-auto object-cover -rotate-1"
                 />
               </div>
             </div>
