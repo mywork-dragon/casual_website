@@ -25,7 +25,11 @@ const navItems = [
         name: "ABOUT",
         href: "/about",
       },
-      // "CONTACT", "CAREERS", "PRIVACY POLICY"
+      // "CONTACT", "CAREERS",
+      {
+        name: "PRIVACY POLICY",
+        href: "/privacy-policy",
+      },
     ],
   },
 ];
@@ -58,7 +62,15 @@ const Navbar = () => {
                     </Link>
                   );
                 }
-                return <Dropdown index={index} item={item} key={index} active={active} setActive={setActive} />;
+                return (
+                  <Dropdown
+                    index={index}
+                    item={item}
+                    key={index}
+                    active={active}
+                    setActive={setActive}
+                  />
+                );
               })}
             </div>
           </div>

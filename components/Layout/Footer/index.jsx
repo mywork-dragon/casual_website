@@ -10,7 +10,7 @@ const footerItems = [
     {
       name: "About",
       href: "/about",
-    }, 
+    },
     // "Contact", "Careers"
   ],
   [
@@ -21,7 +21,12 @@ const footerItems = [
 
     // "Blog", "Case Studies"
   ],
-  // ["Privacy Policy"],
+  [
+    {
+      name: "Privacy Policy",
+      href: "/privacy-policy",
+    },
+  ],
 ];
 
 const Footer = () => {
