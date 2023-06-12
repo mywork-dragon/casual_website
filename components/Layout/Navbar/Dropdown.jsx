@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Dropdown = ({ item, active, setActive, index }) => {
   const { name, options } = item;
-  const toggleDropdown = (e) => {
+  const openDropdown = (e) => {
     e.stopPropagation();
     e.preventDefault();
     if (index === active) {
@@ -24,11 +24,12 @@ const Dropdown = ({ item, active, setActive, index }) => {
     };
   }, []);
   return (
-    <div className="relative">
-      <button
-        onClick={toggleDropdown}
-        className="uppercase transition-all duration-300 text-us font-bold leading-4 text-text-300 cursor-pointer inline-flex items-center hover:text-primary-500"
-      >
+    <div
+      className="relative"
+      onMouseEnter={openDropdown}
+      onMouseLeave={closeDropdown}
+    >
+      <button className="uppercase transition-all duration-300 text-us font-bold leading-4 text-text-300 cursor-pointer inline-flex items-center hover:text-primary-500">
         {name}
         <span className="ml-2">
           <svg
@@ -48,7 +49,7 @@ const Dropdown = ({ item, active, setActive, index }) => {
         </span>
       </button>
       {active === index && (
-        <div className="absolute w-full left-0 top-10 bg-white shadow-nav rounded-md flex flex-col py-3 min-w-[200px] px-4 space-y-4">
+        <div className="absolute w-full left-0 top-6 bg-white shadow-nav rounded-md flex flex-col py-3 min-w-[200px] px-4 space-y-4">
           {options.map((option, index) => {
             return (
               <a
