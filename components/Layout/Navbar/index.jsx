@@ -31,6 +31,7 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [active, setActive] = useState(-1);
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <nav className="w-full shadow-nav bg-white top-0 sticky z-50">
@@ -57,7 +58,7 @@ const Navbar = () => {
                     </Link>
                   );
                 }
-                return <Dropdown item={item} key={index} />;
+                return <Dropdown index={index} item={item} key={index} active={active} setActive={setActive} />;
               })}
             </div>
           </div>

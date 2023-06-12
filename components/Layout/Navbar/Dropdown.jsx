@@ -1,18 +1,19 @@
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
-const Dropdown = ({ item }) => {
+const Dropdown = ({ item, active, setActive, index }) => {
   const { name, options } = item;
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const toggleDropdown = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    setIsDropdownOpen(!isDropdownOpen);
+    if (index === active) {
+      setActive(-1);
+    } else {
+      setActive(index);
+    }
   };
 
   const closeDropdown = () => {
-    setIsDropdownOpen(false);
+    setActive(-1);
   };
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const Dropdown = ({ item }) => {
           </svg>
         </span>
       </button>
-      {isDropdownOpen && (
+      {active === index && (
         <div className="absolute w-full left-0 top-10 bg-white shadow-nav rounded-md flex flex-col py-3 min-w-[200px] px-4 space-y-4">
           {options.map((option, index) => {
             return (
