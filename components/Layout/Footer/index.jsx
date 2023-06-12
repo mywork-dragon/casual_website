@@ -37,17 +37,28 @@ const Footer = () => {
           <div className="flex items-end space-x-20">
             {footerItems.map((item, index) => (
               <div className="flex flex-col items-start" key={index}>
-                {item.map((subItem, subIndex) => (
-                  <a
-                    key={subItem + "" + subIndex}
-                    target={subItem?.href?.startsWith("/") ? "_self" : "_blank"}
-                    rel="noreferrer"
-                    href={subItem.href}
-                    className="font-bold text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500"
-                  >
-                    {subItem.name}
-                  </a>
-                ))}
+                {item.map((subItem, subIndex) => {
+                  if (subItem?.href?.startsWith("/")) {
+                    return (
+                      <Link key={subItem + "" + subIndex} href={subItem.href}>
+                        <a className="font-bold text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500">
+                          {subItem.name}
+                        </a>
+                      </Link>
+                    );
+                  }
+                  return (
+                    <a
+                      key={subItem + "" + subIndex}
+                      target="_blank"
+                      rel="noreferrer"
+                      href={subItem.href}
+                      className="font-bold text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500"
+                    >
+                      {subItem.name}
+                    </a>
+                  );
+                })}
               </div>
             ))}
           </div>

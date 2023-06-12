@@ -40,11 +40,20 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
                 );
               }
               return item.options.map((option, subIndex) => {
+                if (option?.href?.startsWith("/")) {
+                  return (
+                    <Link key={index + "-" + subIndex} href={option.href}>
+                      <a className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500">
+                        {option.name}
+                      </a>
+                    </Link>
+                  );
+                }
                 return (
                   <a
                     href={option.href}
                     key={index + "-" + subIndex}
-                    target={option?.href?.startsWith("/") ? "_self" : "_blank"}
+                    target="_blank"
                     rel="noreferrer"
                     className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
                   >

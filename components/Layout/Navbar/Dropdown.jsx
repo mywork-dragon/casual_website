@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import Link from "next/link";
 
 const Dropdown = ({ item, active, setActive, index }) => {
   const { name, options } = item;
@@ -51,11 +52,20 @@ const Dropdown = ({ item, active, setActive, index }) => {
       {active === index && (
         <div className="absolute w-full left-0 top-6 bg-white shadow-nav rounded-md flex flex-col min-w-[200px] py-[8px] px-[16px]">
           {options.map((option, index) => {
+            if (option?.href?.startsWith("/")) {
+              return (
+                <Link key={index} href={option.href}>
+                  <a className="uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap">
+                    {option.name}
+                  </a>
+                </Link>
+              );
+            }
             return (
               <a
                 key={index}
-                href={`${option.href}`}
-                target={option?.href?.startsWith("/") ? "_self" : "_blank"}
+                href={option.href}
+                target="_blank"
                 rel="noreferrer"
                 className="uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
               >
