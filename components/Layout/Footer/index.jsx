@@ -36,14 +36,14 @@ const Footer = () => {
         <div className="flex w-full flex-col md:flex-row justify-between md:items-end min-h-[96px]">
           <div className="flex items-end space-x-20">
             {footerItems.map((item, index) => (
-              <div className="flex flex-col items-start space-y-2" key={index}>
+              <div className="flex flex-col items-start" key={index}>
                 {item.map((subItem, subIndex) => (
                   <a
                     key={subItem + "" + subIndex}
                     target={subItem?.href?.startsWith("/") ? "_self" : "_blank"}
                     rel="noreferrer"
                     href={subItem.href}
-                    className="font-bold text-xxs leading-4.5 uppercase text-text-300 hover:text-primary-500"
+                    className="font-bold text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500"
                   >
                     {subItem.name}
                   </a>

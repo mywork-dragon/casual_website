@@ -6,7 +6,7 @@ const Banner = () => {
   const url =
     "https://causallabs.us21.list-manage.com/subscribe/post?u=90fb20275d7f65ea298fd2a50&amp;id=3dfa4b7f7e&amp;f_id=00205ae1f0";
   return (
-    <div className="w-full sm:mt-4 lg:mt-24 relative top-16">
+    <div className="w-full sm:mt-4 lg:mt-24 relative top-10">
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="w-full sm:relative sm:-top-10 md:top-auto flex justify-center items-center">
           <img

@@ -49,7 +49,7 @@ const Dropdown = ({ item, active, setActive, index }) => {
         </span>
       </button>
       {active === index && (
-        <div className="absolute w-full left-0 top-6 bg-white shadow-nav rounded-md flex flex-col py-3 min-w-[200px] px-4 space-y-4">
+        <div className="absolute w-full left-0 top-6 bg-white shadow-nav rounded-md flex flex-col min-w-[200px] py-[8px] px-[16px]">
           {options.map((option, index) => {
             return (
               <a
@@ -57,7 +57,7 @@ const Dropdown = ({ item, active, setActive, index }) => {
                 href={`${option.href}`}
                 target={option?.href?.startsWith("/") ? "_self" : "_blank"}
                 rel="noreferrer"
-                className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
+                className="uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
               >
                 {option.name}
               </a>
