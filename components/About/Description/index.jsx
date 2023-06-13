@@ -39,15 +39,7 @@ const Description = () => {
         </div>
         <div className="w-full">
           <p className="font-lora !text-center lg:!text-left text-lg leading-7 text-text-100 mt-3 sm:!mt-5 lg:!mt-10">
-            Causal’s founding team hails from TripAdvisor, the world's largest
-            travel guidance platform and data-oriented company that iterates
-            rapidly to improve their products. At TripAdvisor, we spent an
-            enormous amount of time trying to get the data into the right
-            format. It was really hard to maintain good, clean data and over
-            time the data got messier in our data warehouse. We also spent a lot
-            of time building and launching A/B tests, but it was frustrating to
-            be doing that work and not knowing whether it was pushing the
-            business forward.
+          It should be possible for any product dev team to build, ship and optimize products that have a real impact on the business. You deserve to know that you’re building stuff that matters to your customers. You should have a system that lets you run experiments and evaluate if it’s driving the business (or not). And everyone on the product dev team (engineering, product, analytics) should be able to see the same data and work off of the same tools. A process that used to be broken, but not anymore.
           </p>
         </div>
       </div>

@@ -29,10 +29,10 @@ const navItems = [
         href: "/about",
       },
       // "CONTACT", "CAREERS",
-      {
-        name: "PRIVACY POLICY",
-        href: "/privacy-policy",
-      },
+      // {
+        // name: "PRIVACY POLICY",
+        // href: "/privacy-policy",
+      // },
     ],
   },
 ];
