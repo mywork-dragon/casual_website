@@ -29,12 +29,16 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
           </div>
           <div className="w-full flex flex-col items-start space-y-8 mt-12 max-h-[calc(100vh-100px)] overflow-auto">
             {navItems.map((item, index) => {
-              if (typeof item === "string") {
-                const href = item.toLowerCase().replace(" ", "-");
+              if (!item?.options?.length) {
                 return (
-                  <Link key={index} href={`${href}`}>
-                    <a className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500">
-                      {item}
+                  <Link key={index} href={`${item.href}`}>
+                    <a
+                      target={`${
+                        item.href.startsWith("/") ? "_self" : "_target"
+                      }`}
+                      className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
+                    >
+                      {item.name}
                     </a>
                   </Link>
                 );

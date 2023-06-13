@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps, mainMenu }) {
         <meta name="description" content="Experiment rapidly and win." />
         <meta name="keywords" content="A/B testing, Feature Flagging" />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="30 days" />
       </Head>

@@ -5,17 +5,20 @@ import Dropdown from "./Dropdown";
 import Sidebar from "./Sidebar";
 
 const navItems = [
-  "PRODUCT",
+  {
+    name: "PRODUCT",
+    href: "/product",
+  },
   // "CASE STUDIES",
   {
-    name: "RESOURCES",
-    options: [
-      {
-        name: "DOCS",
-        href: "https://tech.causallabs.io/",
-      },
-      // "BLOG"
-    ],
+    // name: "RESOURCES",
+    // options: [
+    // {
+    name: "TECH DOCS",
+    href: "https://tech.causallabs.io/",
+    // },
+    // "BLOG"
+    // ],
   },
   {
     name: "COMPANY",
@@ -52,12 +55,16 @@ const Navbar = () => {
             </Link>
             <div className="hidden lg:flex items-center space-x-9 ml-10">
               {navItems.map((item, index) => {
-                if (typeof item === "string") {
-                  const href = item.toLowerCase().replace(" ", "-");
+                if (!item?.options?.length) {
                   return (
-                    <Link key={index} href={`/${href}`}>
-                      <a className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500">
-                        {item}
+                    <Link key={index} href={`${item.href}`}>
+                      <a
+                        target={`${
+                          item.href.startsWith("/") ? "_self" : "_target"
+                        }`}
+                        className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500"
+                      >
+                        {item.name}
                       </a>
                     </Link>
                   );
