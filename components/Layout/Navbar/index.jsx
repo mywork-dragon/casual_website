@@ -11,14 +11,17 @@ const navItems = [
   },
   // "CASE STUDIES",
   {
-    // name: "RESOURCES",
-    // options: [
-    // {
     name: "TECH DOCS",
     href: "https://tech.causallabs.io/",
-    // },
-    // "BLOG"
-    // ],
+  },
+  {
+    name: "RESOURCES",
+    options: [
+      {
+        name: "BLOG",
+        href: "/blog",
+      },
+    ],
   },
   {
     name: "COMPANY",
@@ -30,8 +33,8 @@ const navItems = [
       },
       // "CONTACT", "CAREERS",
       // {
-        // name: "PRIVACY POLICY",
-        // href: "/privacy-policy",
+      // name: "PRIVACY POLICY",
+      // href: "/privacy-policy",
       // },
     ],
   },

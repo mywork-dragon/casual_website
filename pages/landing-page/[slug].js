@@ -7,7 +7,7 @@ import camelcaseKeys from 'camelcase-keys';
 import { getLandingPage, getLandingPages, getPostsData } from '@/lib/api'
 
 import LandingPageSection from '@/components/landing-page-sections/landing-page-section'
-import Blog from "@/components/blog/blog";
+import Blog from "@/components/_blog/blog";
 import Preloader from '@/components/preloader';
 
 export default function LandingPage({ page, blogPosts }) {

@@ -27,7 +27,7 @@ module.exports = {
     )
   },
   images: {
-    domains: ["cdn.buttercms.com"],
+    domains: ["cdn.buttercms.com", "lh3.googleusercontent.com"],
   },
 };
 

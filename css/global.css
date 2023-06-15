@@ -149,31 +149,46 @@ button {
     font-family: 'Inter', sans-serif;
 }
 
-.rich-text, .rich-text * {
+.rich-text,
+.rich-text * {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 300;
 }
 
-.rich-text ul {
+.rich-text ul,
+.blog-rich-text ul {
     list-style: disc;
     padding-left: 16px;
     margin-bottom: 16px;
 }
 
-.rich-text ul li {
+.rich-text ul li,
+.blog-rich-text ul li {
     color: #21282B;
     margin-top: 4px;
 }
 
-.rich-text a {
+.rich-text a,
+.blog-rich-text a {
     font-weight: bold;
 }
 
-.rich-text a:hover {
+.rich-text a:hover,
+.blog-rich-text a:hover {
     color: #99F876;
 }
 
-.rich-text p {
+.rich-text p,
+.blog-rich-text p {
     margin-bottom: 16px;
+}
+
+/* blog-rich-text */
+.blog-rich-text,
+.blog-rich-text * {
+    font-family: 'Lora', sans-serif;
+    font-size: 18px;
+    color: #2F4857;
+    line-height: 27px;
 }
