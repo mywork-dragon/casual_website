@@ -18,10 +18,10 @@ const footerItems = [
       name: "DOCS",
       href: "https://tech.causallabs.io/",
     },
-    {
-      name: "BLOG",
-      href: "/blog",
-    },
+    // {
+    //   name: "BLOG",
+    //   href: "/blog",
+    // },
 
     // "Blog", "Case Studies"
   ],

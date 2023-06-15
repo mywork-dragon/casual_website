@@ -14,15 +14,15 @@ const navItems = [
     name: "TECH DOCS",
     href: "https://tech.causallabs.io/",
   },
-  {
-    name: "RESOURCES",
-    options: [
-      {
-        name: "BLOG",
-        href: "/blog",
-      },
-    ],
-  },
+  // {
+  //   name: "RESOURCES",
+  //   options: [
+  //     {
+  //       name: "BLOG",
+  //       href: "/blog",
+  //     },
+  //   ],
+  // },
   {
     name: "COMPANY",
     options: [

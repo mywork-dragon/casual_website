@@ -18,6 +18,8 @@ import "@/css/global.css";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import Banner from "@/components/Layout/Banner";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps, mainMenu }) {
   // const [isLoading, setIsLoading] = useState(false);
@@ -49,9 +51,10 @@ function MyApp({ Component, pageProps, mainMenu }) {
   const pageLayout = (
     <div className="w-full min-h-screen font-inter">
       <Navbar />
-      <div className="w-full min-h-screen overflow-x-hidden">
+      <div className="w-full min-h-screen">
         <Component {...pageProps} />
       </div>
+      <ToastContainer />
       <Banner />
       <Footer />
     </div>
