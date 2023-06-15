@@ -24,13 +24,9 @@ export default function BlogPost({ post, relatedBlogs }) {
         <title>{post.seoTitle}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="shortcut icon"
-          type="image/x-icon"
-          href="https://buttercms.com/static/v2/images/favicon.png"
-        />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={post.url} />
+        <meta property="og:url" content={post.url || post.slug} />
         <meta property="og:title" content={post.seoTitle} />
         <meta property="og:image" content={post.featuredImage} />
         <meta property="og:description" content={post.metaDescription} />

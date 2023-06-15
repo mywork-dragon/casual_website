@@ -1,13 +1,7 @@
-import { useEffect, useState } from "react";
-
-import Router from "next/router";
 import App from "next/app";
 import Head from "next/head";
-import { useRouter } from "next/router";
 
 import { getMainMenu } from "@/lib/api";
-
-import Preloader from "@/components/preloader";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "@/css/lineicons.css";
@@ -18,36 +12,10 @@ import "@/css/global.css";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import Banner from "@/components/Layout/Banner";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function MyApp({ Component, pageProps, mainMenu }) {
-  // const [isLoading, setIsLoading] = useState(false);
-  // const router = useRouter();
-  // const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-
-  // useEffect(() => {
-  //   import("bootstrap/dist/js/bootstrap.js");
-
-  //   const showLoader = () => {
-  //     setIsLoading(true);
-  //   };
-
-  //   const removeLoader = () => {
-  //     setIsLoading(false);
-  //   };
-
-  //   Router.events.on("routeChangeStart", showLoader);
-  //   Router.events.on("routeChangeComplete", removeLoader);
-  //   Router.events.on("routeChangeError", removeLoader);
-
-  //   return () => {
-  //     Router.events.off("routeChangeStart", showLoader);
-  //     Router.events.off("routeChangeComplete", removeLoader);
-  //     Router.events.off("routeChangeError", removeLoader);
-  //   };
-  // }, [authToken, router]);
-
+function MyApp({ Component, pageProps }) {
   const pageLayout = (
     <div className="w-full min-h-screen font-inter">
       <Navbar />
@@ -74,28 +42,9 @@ function MyApp({ Component, pageProps, mainMenu }) {
         <meta name="language" content="English" />
         <meta name="revisit-after" content="30 days" />
       </Head>
-
-      {/* {isLoading && <Preloader></Preloader>} */}
       {pageLayout}
-      {/* {!isLoading && pageLayout} */}
     </>
   );
 }
-
-MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-  let mainMenu = [];
-
-  if (authToken) {
-    try {
-      mainMenu = await getMainMenu();
-    } catch (e) {
-      console.error("Couldn't load main menu links.", e);
-    }
-  }
-
-  return { ...appProps, mainMenu };
-};
 
 export default MyApp;
