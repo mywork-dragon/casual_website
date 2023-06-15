@@ -14,7 +14,7 @@ const ProductTeam = () => {
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center items-start mt-12 sm:mt-16 md:mt-24">
           <div className="relative max-w-401 lg:max-w-none">
-            <div className="absolute -left-36">
+            <div className="absolute left-48 -top-16 md:top-0 md:left-12">
               <img
                 src="/images/product/Spaceship.png"
                 className="max-w-[124px] h-auto object-cover"

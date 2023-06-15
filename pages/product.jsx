@@ -17,7 +17,7 @@ const sections = [
     description: `Poorly defined and unstructured data slows product teams down. Get everyone on the same page with Causal’s shared data model. Schemas are easy to create and update as your product changes since they use a familiar language and live in your revision control system.`,
     cta: {
       name: "READ THE DOCS",
-      href: "https://tech.causallabs.io/",
+      href: "https://tech.causallabs.io/docs/fdl/intro/",
     },
     image: "/images/product/DefinedInCode.png",
   },
@@ -69,7 +69,7 @@ const sections = [
     image: "/images/product/Metrics.png",
     cta: {
       name: "READ THE DOCS",
-      href: "https://tech.causallabs.io/",
+      href: "https://tech.causallabs.io/docs/data-warehouse/metrics/",
     },
   },
   {

@@ -135,7 +135,7 @@ const HowItWorks = () => {
                       {cards[0].title}
                     </p>
                   </div>
-                  <div className="bg-white shadow-card !pl-5 mt-5 md:mt-0 md:ml-6 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:-rotate-1">
+                  <div className="bg-white shadow-card !pl-5 !mt-7 md:!mt-0 md:ml-6 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:-rotate-1">
                     <div className="relative -top-1.5">
                       <img
                         src={cards[1].image}
@@ -146,7 +146,7 @@ const HowItWorks = () => {
                       {cards[1].title}
                     </p>
                   </div>
-                  <div className="bg-white shadow-card !pl-5 mt-5 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-2">
+                  <div className="bg-white shadow-card !pl-5 !mt-7 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-2">
                     <div className="relative -top-5">
                       <img
                         src={cards[2].image}
@@ -157,7 +157,7 @@ const HowItWorks = () => {
                       {cards[2].title}
                     </p>
                   </div>
-                  <div className="bg-white shadow-card !pl-5 md:ml-6 mt-5 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[-0.5deg]">
+                  <div className="bg-white shadow-card !pl-5 md:ml-6 !mt-7 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[-0.5deg]">
                     <div className="relative -top-5">
                       <img
                         src={cards[3].image}
@@ -168,7 +168,7 @@ const HowItWorks = () => {
                       {cards[3].title}
                     </p>
                   </div>
-                  <div className="bg-white shadow-card !pl-5 mt-5 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[0.5deg]">
+                  <div className="bg-white shadow-card !pl-5 !mt-7 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[0.5deg]">
                     <div className="relative -top-5">
                       <img
                         src={cards[4].image}
@@ -179,7 +179,7 @@ const HowItWorks = () => {
                       {cards[4].title}
                     </p>
                   </div>
-                  <div className="bg-white shadow-card !pl-5 md:ml-6 mt-5 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[0.5deg]">
+                  <div className="bg-white shadow-card !pl-5 md:ml-6 !mt-7 pr-10 md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[0.5deg]">
                     <div className="relative -top-5">
                       <img
                         src={cards[5].image}
@@ -192,7 +192,7 @@ const HowItWorks = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center w-full md:w-auto">
-                  <div className="bg-white shadow-card !pl-5 md:ml-6 mt-5 pr-10 w-full md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[0.5deg]">
+                  <div className="bg-white shadow-card !pl-5 md:ml-6 !mt-7 pr-10 w-full md:max-w-xs min-w-[318px] !pb-8 rounded-md md:rotate-[0.5deg]">
                     <div className="relative -top-5">
                       <img
                         src={cards[6].image}

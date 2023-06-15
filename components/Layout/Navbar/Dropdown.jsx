@@ -30,7 +30,7 @@ const Dropdown = ({ item, active, setActive, index }) => {
       onMouseEnter={openDropdown}
       onMouseLeave={closeDropdown}
     >
-      <button className="uppercase transition-all duration-300 text-us font-bold leading-4 text-text-300 cursor-pointer inline-flex items-center hover:text-primary-500">
+      <button className="uppercase transition-all duration-300 text-us font-bold leading-4 text-text-300 cursor-pointer inline-flex items-center">
         {name}
         <span className="ml-2">
           <svg

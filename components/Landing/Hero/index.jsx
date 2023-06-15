@@ -9,8 +9,9 @@ const Hero = () => {
         <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center">
           <div className="lg:max-w-lg mt-8 sm:mt-24 lg:mt-0">
             <h1 className="uppercase text-2xl leading-8 sm:text-4xl sm:leading-10 lg:text-4.5xl font-extrabold lg:leading-12.5 text-text-300">
-              Product optimization <TextGraphic>in a box</TextGraphic> for data
-              obsessed teams
+              Product optimization <TextGraphic>in a box</TextGraphic> for{" "}
+              <br className="hidden lg:inline-block" />
+              data obsessed teams
             </h1>
             <p className="font-lora lg:max-w-401 text-base leading-6 sm:text-lg sm:leading-6.5 text-text-100 font-normal mt-2 sm:mt-4">
               Stop stitching together half a dozen tools. The most comprehensive
@@ -18,8 +19,15 @@ const Hero = () => {
               software.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center space-y-5 sm:space-y-0 sm:space-x-10">
-              <RoundedButton href="https://book.vimcal.com/p/christina/45minutes-0571c">Book Demo</RoundedButton>
-              <RoundedButton secondary href="https://tools.causallabs.io/signup">Try It Out</RoundedButton>
+              <RoundedButton href="https://book.vimcal.com/p/christina/45minutes-0571c">
+                Book Demo
+              </RoundedButton>
+              <RoundedButton
+                secondary
+                href="https://tools.causallabs.io/signup"
+              >
+                Try It Out
+              </RoundedButton>
             </div>
           </div>
           <div className="lg:max-w-xl">
