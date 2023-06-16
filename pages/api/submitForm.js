@@ -1,24 +1,47 @@
 import nodemailer from "nodemailer";
+import smtpTransport from "nodemailer-smtp-transport";
 
 export default async function submitForm(req, res) {
+  const {
+    EMAIL_TO,
+    EMAIL_FROM,
+    EMAIL_SUBJECT,
+    SMTP_SERVICE,
+    SMTP_AUTH_USER,
+    SMTP_AUTH_PASS,
+  } = process.env;
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
+  }
+  if (
+    !EMAIL_TO ||
+    !EMAIL_FROM ||
+    !EMAIL_SUBJECT ||
+    !SMTP_SERVICE ||
+    !SMTP_AUTH_USER ||
+    !SMTP_AUTH_PASS
+  ) {
+    return res.status(500).json({ message: "Missing configuration" });
   }
 
   const { firstName, lastName, email, company, howDidYouHearAboutUs, message } =
     req.body;
 
   try {
-    const transporter = nodemailer.createTransport({
-      // Configure the email transport options here
-      // See nodemailer documentation for details
-    });
+    const transporter = nodemailer.createTransport(
+      smtpTransport({
+        service: SMTP_SERVICE,
+        auth: {
+          user: SMTP_AUTH_USER,
+          pass: SMTP_AUTH_PASS,
+        },
+      })
+    );
 
-    // Compose the email message
     const mailOptions = {
-      from: email,
-      to: "hello@causallabs.io",
-      subject: "Contact Form Submission",
+      from: EMAIL_FROM,
+      to: EMAIL_TO,
+      subject: EMAIL_SUBJECT.split("_").join(" ") || "Contact Form Submission",
       text: `
         First Name: ${firstName}
         Last Name: ${lastName}
@@ -29,7 +52,6 @@ export default async function submitForm(req, res) {
       `,
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
 
     return res.status(200).json({ message: "Form submitted successfully" });
