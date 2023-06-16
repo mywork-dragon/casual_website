@@ -28,16 +28,18 @@ const Card = ({ title, index, updated, author, summary, slug }) => {
     >
       <div>
         <div className="flex items-center space-x-3">
-          <div>
-            <img
-              src={author?.profile_image || "/images/blog/avatar.svg"}
-              style={{ borderRadius: author?.profile_image ? "" : 0 }}
-              className="w-12 h-auto object-cover rounded-full"
-            />
-          </div>
+          {author?.profile_image ? (
+            <div>
+              <img
+                src={author?.profile_image}
+                style={{ borderRadius: author?.profile_image ? "" : 0 }}
+                className="w-12 h-auto object-cover rounded-full"
+              />
+            </div>
+          ) : null}
           <div>
             <p className="font-inter text-text-300 font-bold text-xs leading-4">
-              {date.dateNumber}.{date.monthName} {date.fullYear}.
+              {date.monthName} {date.dateNumber}, {date.fullYear}
             </p>
             <p className="font-inter text-text-300 font-bold text-xs leading-4 mt-0.5">
               {author?.first_name || " "} {author?.last_name || " "}

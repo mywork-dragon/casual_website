@@ -11,7 +11,11 @@ const footerItems = [
       name: "About",
       href: "/about",
     },
-    // "Contact", "Careers"
+    {
+      name: "Contact",
+      href: "/contact",
+    },
+    // "Careers"
   ],
   [
     {

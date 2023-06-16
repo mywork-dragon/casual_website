@@ -9,7 +9,7 @@ import Investors from "@/components/About/Investors";
 
 const AboutPage = () => {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <title>
           Causal: Feature flagging and A/B testing software for product dev
@@ -22,7 +22,7 @@ const AboutPage = () => {
       <Investors />
       <ProductTeam />
       <BuildShip about />
-    </>
+    </div>
   );
 };
 

@@ -14,8 +14,10 @@ import Footer from "@/components/Layout/Footer";
 import Banner from "@/components/Layout/Banner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   const pageLayout = (
     <div className="w-full min-h-screen font-inter">
       <Navbar />
@@ -23,7 +25,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </div>
       <ToastContainer />
-      <Banner />
+      {router.pathname !== "/contact" && <Banner />}
       <Footer />
     </div>
   );

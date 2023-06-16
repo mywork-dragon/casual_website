@@ -28,12 +28,12 @@ const SocialSharingLinks = () => {
 
   useEffect(() => {
     setLoaded(true);
-  }, [])
+  }, []);
   if (!loaded) return null;
   return (
-    <div className="!sticky z-10 top-24">
+    <div className="sm:!sticky z-10 top-24 w-full sm:w-auto">
       <div className="space-y-5 flex flex-col border-r-4 border-secondary-600 pr-8">
-        <a
+        {/* <a
           href={`${SOCIALS.facebook}${currentLocation}`}
           target="_blank"
           className="hover:text-primary-500"
@@ -53,7 +53,7 @@ const SocialSharingLinks = () => {
           className="hover:text-primary-500"
         >
           <AiOutlineMail size="30" />
-        </a>
+        </a> */}
         <a
           onClick={handleCopyLink}
           className="hover:text-primary-500 cursor-pointer"
