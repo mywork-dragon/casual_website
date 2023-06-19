@@ -21,7 +21,11 @@ export default async function submitForm(req, res) {
     !SMTP_AUTH_USER ||
     !SMTP_AUTH_PASS
   ) {
-    return res.status(500).json({ message: "Missing configuration" });
+    return res
+      .status(500)
+      .json({
+        message: `Missing configuration ${EMAIL_FROM} ${EMAIL_TO} ${EMAIL_SUBJECT} ${SMTP_SERVICE} ${SMTP_AUTH_PASS} ${SMTP_AUTH_PASS}`,
+      });
   }
 
   const { firstName, lastName, email, company, howDidYouHearAboutUs, message } =

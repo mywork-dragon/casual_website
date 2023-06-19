@@ -21,15 +21,17 @@ const Testimonial = () => {
                 src="/images/TonyDeigh.png"
                 className="h-auto object-cover w-20 rounded-full"
               />
+              <div className="flex flex-col items-start text-left">
               <p className="text-lg mb-2.5 leading-6.5 text-text-300 text-center underline-offset-[2px] decoration-[#99F876] underline font-bold">
                 <TextGraphic height="12px" bottom="1px">
                   Tony Deigh
                 </TextGraphic>
               </p>
+              <p className="text-lg leading-6.5 text-text-300 text-left font-bold">
+                Co-Founder & Chief Data Officer, <br />JobCase
+              </p>
+              </div>
             </div>
-            <p className="text-lg leading-6.5 text-text-300 text-center font-bold">
-              Co-Founder & Chief Data Officer, JobCase
-            </p>
           </div>
         </div>
       </div>
