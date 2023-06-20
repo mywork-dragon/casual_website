@@ -20,7 +20,7 @@ const Hero = () => {
               if those features are actually driving the business.
               <br />
               <br />
-              What’s more,engineering teams are dealing with poorly defined and
+              What’s more, engineering teams are dealing with poorly defined and
               unstructured data in their data warehouses. When the data looks
               off, they need to allocate time to look into it which means they
               become less productive. Sometimes there’s more than one person

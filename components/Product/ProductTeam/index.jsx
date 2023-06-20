@@ -28,7 +28,7 @@ const ProductTeam = () => {
             </div>
             <div className="absolute top-[360px] left-12 sm:top-24 sm:left-48 md:top-[300px] md:left-64 w-full max-w-[240px] sm:max-w-350">
               <p className="font-lora font-normal leading-3 sm:leading-6 text-xs sm:text-base text-text-300 -rotate-2">
-                We had 4 A/B testing platforms—none of which met our needs—and
+                We had four A/B testing platforms—none of which met our needs—and
                 I’ve been trying for years to unify them and solve our problems
                 across our stack. We’ve started eliminating those other
                 platforms and Causal has increased the velocity of our

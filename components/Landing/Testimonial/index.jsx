@@ -11,7 +11,7 @@ const Testimonial = () => {
         >
           <div className="mt-2 sm:mt-4 max-w-3.5xl flex items-center flex-col">
             <p className="font-lora text-text-100 text-base leading-6 sm:text-lg sm:leading-6.5 text-center font-normal">
-              “We had 4 A/B testing platforms—none of which met our needs—and
+              “We had four A/B testing platforms—none of which met our needs—and
               I’ve been trying for years to unify them and solve our problems
               across our stack. We’ve started eliminating those other platforms
               and Causal has increased the velocity of our experimentation.”
