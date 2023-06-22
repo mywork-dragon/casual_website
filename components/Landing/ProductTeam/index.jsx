@@ -7,7 +7,7 @@ const ProductTeam = () => {
     <div className="w-full mt-12 sm:mt-24">
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="text-center">
-          <h2 className="font-bold text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
+          <h2 className="font-bold font-inter text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
             Why product dev<br></br>
             teams <TextGraphic>love</TextGraphic> Causal
           </h2>

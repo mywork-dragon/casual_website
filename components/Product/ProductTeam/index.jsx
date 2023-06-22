@@ -7,7 +7,7 @@ const ProductTeam = () => {
     <div className="w-full mt-12 sm:mt-24">
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="text-center">
-          <h2 className="font-bold text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
+          <h2 className="font-bold font-inter text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
             Why product dev<br></br>
             teams <TextGraphic>love</TextGraphic> Causal
           </h2>
@@ -28,9 +28,9 @@ const ProductTeam = () => {
             </div>
             <div className="absolute top-[360px] left-12 sm:top-24 sm:left-48 md:top-[300px] md:left-64 w-full max-w-[240px] sm:max-w-350">
               <p className="font-lora font-normal leading-3 sm:leading-6 text-xs sm:text-base text-text-300 -rotate-2">
-                We had four A/B testing platforms—none of which met our needs—and
-                I’ve been trying for years to unify them and solve our problems
-                across our stack. We’ve started eliminating those other
+                We had four A/B testing platforms—none of which met our
+                needs—and I’ve been trying for years to unify them and solve our
+                problems across our stack. We’ve started eliminating those other
                 platforms and Causal has increased the velocity of our
                 experimentation.”
               </p>

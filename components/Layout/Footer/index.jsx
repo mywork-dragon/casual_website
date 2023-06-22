@@ -22,12 +22,14 @@ const footerItems = [
       name: "DOCS",
       href: "https://tech.causallabs.io/",
     },
-    // {
-    //   name: "BLOG",
-    //   href: "/blog",
-    // },
-
-    // "Blog", "Case Studies"
+    {
+      name: "BLOG",
+      href: "/blog",
+    },
+    {
+      name: "Case Studies",
+      href: "/case-study",
+    },
   ],
   [
     {
@@ -49,7 +51,7 @@ const Footer = () => {
                   if (subItem?.href?.startsWith("/")) {
                     return (
                       <Link key={subItem + "" + subIndex} href={subItem.href}>
-                        <a className="font-bold text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500">
+                        <a className="font-bold font-inter text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500">
                           {subItem.name}
                         </a>
                       </Link>
@@ -61,7 +63,7 @@ const Footer = () => {
                       target="_blank"
                       rel="noreferrer"
                       href={subItem.href}
-                      className="font-bold text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500"
+                      className="font-bold font-inter text-xxs py-2 leading-4.5 uppercase text-text-300 hover:text-primary-500"
                     >
                       {subItem.name}
                     </a>

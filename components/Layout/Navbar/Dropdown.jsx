@@ -26,11 +26,11 @@ const Dropdown = ({ item, active, setActive, index }) => {
   }, []);
   return (
     <div
-      className="relative"
+      className="relative flex"
       onMouseEnter={openDropdown}
       onMouseLeave={closeDropdown}
     >
-      <button className="uppercase transition-all duration-300 text-us font-bold leading-4 text-text-300 cursor-pointer inline-flex items-center">
+      <button className="uppercase font-inter transition-all duration-300 text-us font-bold leading-4 text-text-300 cursor-pointer inline-flex items-center">
         {name}
         <span className="ml-2">
           <svg
@@ -50,12 +50,12 @@ const Dropdown = ({ item, active, setActive, index }) => {
         </span>
       </button>
       {active === index && (
-        <div className="absolute w-full left-0 top-6 bg-white shadow-nav rounded-md flex flex-col min-w-[200px] py-[8px] px-[16px]">
+        <div className="absolute w-full left-0 top-4 bg-white shadow-nav rounded-md flex flex-col min-w-[200px] py-[8px] px-[16px]">
           {options.map((option, index) => {
             if (option?.href?.startsWith("/")) {
               return (
                 <Link key={index} href={option.href}>
-                  <a className="uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap">
+                  <a className="font-inter uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap">
                     {option.name}
                   </a>
                 </Link>
@@ -67,7 +67,7 @@ const Dropdown = ({ item, active, setActive, index }) => {
                 href={option.href}
                 target="_blank"
                 rel="noreferrer"
-                className="uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
+                className="font-inter uppercase text-us font-bold py-[8px] leading-4 text-text-300 hover:text-primary-500 whitespace-nowrap"
               >
                 {option.name}
               </a>

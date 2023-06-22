@@ -9,20 +9,14 @@ const navItems = [
     name: "PRODUCT",
     href: "/product",
   },
-  // "CASE STUDIES",
+  {
+    name: "CASE STUDIES",
+    href: "/case-study",
+  },
   {
     name: "TECH DOCS",
     href: "https://tech.causallabs.io/",
   },
-  // {
-  //   name: "RESOURCES",
-  //   options: [
-  //     {
-  //       name: "BLOG",
-  //       href: "/blog",
-  //     },
-  //   ],
-  // },
   {
     name: "COMPANY",
     options: [
@@ -31,7 +25,15 @@ const navItems = [
         name: "ABOUT",
         href: "/about",
       },
-      // "CONTACT", "CAREERS",
+      {
+        name: "BLOG",
+        href: "/blog",
+      },
+      {
+        name: "CONTACT",
+        href: "/contact",
+      },
+      // "CAREERS",
       // {
       // name: "PRIVACY POLICY",
       // href: "/privacy-policy",
@@ -65,7 +67,7 @@ const Navbar = () => {
                         target={`${
                           item.href.startsWith("/") ? "_self" : "_target"
                         }`}
-                        className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500"
+                        className="uppercase text-us font-bold leading-4 text-text-300 hover:text-primary-500 font-inter"
                       >
                         {item.name}
                       </a>

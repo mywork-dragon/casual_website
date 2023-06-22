@@ -8,7 +8,7 @@ const ContactBody = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm();
   const onSubmit = async (data) => {
     try {
@@ -90,54 +90,63 @@ const ContactBody = () => {
             </div>
           </div>
           <div className="w-full lg:max-w-[50%] !mt-16 lg:!mt-0 !mb-0 sm:!mb-16 md:!mb-24 lg:!mb-0">
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="w-full space-y-3 flex flex-col items-end"
-            >
-              <input
-                className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
-                placeholder="First Name*"
-                {...register("firstName", {
-                  required: true,
-                  validate: (value) => !!value.length,
-                })}
-              />
-              <input
-                className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
-                placeholder="Last Name*"
-                {...register("lastName", {
-                  required: true,
-                  validate: (value) => !!value.length,
-                })}
-              />
-              <input
-                className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
-                placeholder="Email*"
-                type="email"
-                {...register("email", {
-                  required: true,
-                  validate: (value) => value.includes("@"),
-                })}
-              />
-              <input
-                className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
-                placeholder="Company"
-                {...register("company")}
-              />
-              <input
-                className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
-                placeholder="How did you hear about us?"
-                {...register("howDidYouHearAboutUs")}
-              />
-              <textarea
-                className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
-                placeholder="Message"
-                {...register("message")}
-              />
-              <div className="!mt-10">
-                <SubmitRoundedButton>Submit</SubmitRoundedButton>
+            {!isSubmitted ? (
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="w-full space-y-3 flex flex-col items-end"
+              >
+                <input
+                  className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
+                  placeholder="First Name*"
+                  {...register("firstName", {
+                    required: true,
+                    validate: (value) => !!value.length,
+                  })}
+                />
+                <input
+                  className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
+                  placeholder="Last Name*"
+                  {...register("lastName", {
+                    required: true,
+                    validate: (value) => !!value.length,
+                  })}
+                />
+                <input
+                  className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
+                  placeholder="Email*"
+                  type="email"
+                  {...register("email", {
+                    required: true,
+                    validate: (value) => value.includes("@"),
+                  })}
+                />
+                <input
+                  className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
+                  placeholder="Company"
+                  {...register("company")}
+                />
+                <input
+                  className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
+                  placeholder="How did you hear about us?"
+                  {...register("howDidYouHearAboutUs")}
+                />
+                <textarea
+                  className="!px-5 w-full py-2.5 border border-secondary-600 rounded-md font-lora text-text-100 font-base leading-8"
+                  placeholder="Message"
+                  {...register("message")}
+                />
+                <div className="!mt-10">
+                  <SubmitRoundedButton>Submit</SubmitRoundedButton>
+                </div>
+              </form>
+            ) : (
+              <div className="w-full space-y-3 flex flex-col">
+                <h1 className="font-inter text-2xl font-bold leading-7">
+                  Thanks for reaching out! Someone on our team will be in touch
+                  soon.
+                </h1>
               </div>
-            </form>
+            )}
           </div>
         </div>
       </div>

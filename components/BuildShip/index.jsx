@@ -9,7 +9,7 @@ const BuildShip = ({ about = false }) => {
   }
   return (
     <div className={`text-center ${spacingStyles}`}>
-      <h2 className="font-bold text-sm leading-5 sm:text-2xl md:text-3xl lg:text-3.5xl text-text-300 sm:leading-9">
+      <h2 className="font-bold font-inter text-sm leading-5 sm:text-2xl md:text-3xl lg:text-3.5xl text-text-300 sm:leading-9">
         Build, ship and optimize consumer tech products<br></br>
         <TextGraphic>without stitching together half a dozen tools</TextGraphic>
       </h2>
