@@ -66,7 +66,7 @@ const ContactBody = () => {
         <div className="w-full flex flex-col lg:flex-row justify-between items-center">
           <div>
             <h1 className="uppercase text-2xl leading-8 sm:text-4xl sm:leading-10 lg:text-4.5xl font-extrabold lg:leading-12.5 text-text-300">
-              We’d love to
+              We’d love to{" "}
               <br className="hidden lg:inline-block" />
               hear from you
             </h1>

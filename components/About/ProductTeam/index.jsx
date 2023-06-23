@@ -8,7 +8,7 @@ const ProductTeam = () => {
         <div className="text-center">
           <h2 className="font-bold font-inter text-2xl leading-8 sm:text-3xl md:text-4.5xl sm:leading-10 md:leading-11.5 text-text-300">
             Why product dev<br></br>
-            teams <TextGraphic>love</TextGraphic> Causal
+            {" "}<TextGraphic>teams love</TextGraphic> Causal
           </h2>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center items-start mt-12 sm:mt-16 md:mt-24">

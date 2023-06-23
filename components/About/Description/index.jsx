@@ -10,7 +10,7 @@ const Description = () => {
             Instead of spending time cleaning up messy data, teams should be
             spending time on things that will{" "}
             <span className="sm:hidden">
-              create a competitive <TextGraphic>advantage</TextGraphic>
+              create a <TextGraphic>competitive advantage</TextGraphic>
             </span>
             <span className="hidden sm:inline-block">
               <TextGraphic>create a competitive advantage</TextGraphic>

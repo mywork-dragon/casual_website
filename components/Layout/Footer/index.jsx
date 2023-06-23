@@ -48,7 +48,7 @@ const Footer = () => {
     <footer className="w-full shadow-nav bg-white mt-32 sm:mt-0 pb-8 sm:pb-24">
       <div className="w-full max-w-5xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="flex w-full flex-col md:flex-row justify-between md:items-end min-h-[96px]">
-          <div className="flex items-end space-x-20">
+          <div className="flex items-end space-x-5 sm:space-x-20">
             {footerItems.map((item, index) => (
               <div className="flex flex-col items-start" key={index}>
                 {item.map((subItem, subIndex) => {
