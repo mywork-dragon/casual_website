@@ -33,6 +33,10 @@ const footerItems = [
   ],
   [
     {
+      name: "Log in",
+      href: "https://tools.causallabs.io/signup",
+    },
+    {
       name: "Privacy Policy",
       href: "/privacy-policy",
     },

@@ -88,12 +88,12 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex items-center space-x-9">
             <a
-              href="https://tools.causallabs.io/"
+              href="https://tools.causallabs.io/signup"
               target="_blank"
               rel="noreferrer"
               className="uppercase text-text-300 text-us leading-4 font-bold hover:text-primary-500"
             >
-              Login
+              TRY IT OUT
             </a>
             <StyledLink href="https://book.vimcal.com/p/christina/45minutes-0571c">
               Book Demo

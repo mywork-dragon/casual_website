@@ -40,12 +40,12 @@ export default function BlogPost({ post, relatedBlogs }) {
 export async function getStaticProps({ params }) {
   try {
     const post = await getPost(params.slug);
-    const category = post.categories[0].slug;
+    const category = post?.categories?.[0]?.slug;
     let relatedBlogs = [];
     if (category) {
       relatedBlogs = (await getPostsData({ category })).posts;
     }
-    if (relatedBlogs?.length) {
+    if (!relatedBlogs?.length) {
       relatedBlogs = (await getPostsData()).posts;
     }
     const categories = await getCategories();
@@ -59,29 +59,14 @@ export async function getStaticProps({ params }) {
     };
   } catch (e) {
     return {
-      notFound: true,
+      notFound: true
     };
   }
 }
 
 export async function getStaticPaths() {
-  const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-
-  if (butterToken) {
-    try {
-      const posts = (await getPostsData()).posts;
-
-      return {
-        paths: posts.map((post) => `/blog/${post.slug}`),
-        fallback: true,
-      };
-    } catch (e) {
-      /* Empty */
-    }
-  }
-
   return {
     paths: [],
-    fallback: false,
+    fallback: 'blocking',
   };
 }
