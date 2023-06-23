@@ -55,11 +55,12 @@ export async function getStaticProps({ params }) {
         categories,
         relatedBlogs: camelcaseKeys(relatedBlogs),
       },
-      revalidate: 3600,
+      revalidate: 10,
     };
   } catch (e) {
     return {
-      notFound: true
+      notFound: true,
+      revalidate: 10,
     };
   }
 }

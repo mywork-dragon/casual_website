@@ -30,16 +30,18 @@ export async function getStaticProps() {
         props: {
           data: caseStudyPage,
         },
-        revalidate: 3600,
+        revalidate: 10,
       };
     } catch (e) {
       return {
-        props: { data: {}, revalidate: 3600 },
+        props: { data: {} },
+        revalidate: 10,
       };
     }
   }
 
   return {
-    props: { data: {}, revalidate: 3600 },
+    props: { data: {} },
+    revalidate: 10,
   };
 }

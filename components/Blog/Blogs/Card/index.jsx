@@ -2,7 +2,7 @@ import RoundedButton from "@/components/Button/Rounded";
 import { dateFormateHandler } from "@/lib/index";
 import React from "react";
 
-const Card = ({ title, index, updated, author, summary, slug }) => {
+const Card = ({ title, index, author, summary, slug, published }) => {
   let rotate = 1;
   if (index === 1 || index % 4 === 0) {
     rotate = -1;
@@ -17,7 +17,7 @@ const Card = ({ title, index, updated, author, summary, slug }) => {
   ) {
     noSpace = true;
   }
-  const date = dateFormateHandler(updated || new Date());
+  const date = dateFormateHandler(published || new Date());
   return (
     <div
       style={{

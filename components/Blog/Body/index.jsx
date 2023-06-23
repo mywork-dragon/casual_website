@@ -5,8 +5,8 @@ import RelatedBlogCard from "./RelatedBlogCard";
 import TextGraphic from "@/components/TextGraphic";
 
 const BlogBody = ({ post, relatedBlogs }) => {
-  const { title, summary, author, updated, body, slug } = post;
-  const date = dateFormateHandler(updated || new Date());
+  const { title, summary, author, body, slug, published } = post;
+  const date = dateFormateHandler(published || new Date());
 
   const filteredRelatedBlogs = useMemo(() => {
     return relatedBlogs?.length

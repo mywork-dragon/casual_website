@@ -67,7 +67,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('/fonts/Inter/Inter-bold.ttf') format('truetype');
+    src: url('/fonts/Inter/Inter-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

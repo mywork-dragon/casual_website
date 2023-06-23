@@ -38,14 +38,15 @@ export async function getStaticProps() {
             count: blogPosts.count,
           },
         },
-        revalidate: 3600,
+        revalidate: 10,
       };
     } catch (e) {
       return {
         props: { posts: [], categories: [] },
+        revalidate: 10,
       };
     }
   }
 
-  return { props: { posts: [], categories: [] }, revalidate: 3600 };
+  return { props: { posts: [], categories: [] }, revalidate: 10 };
 }
