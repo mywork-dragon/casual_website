@@ -1,68 +1,52 @@
-import Link from "next/link";
+import Blogs from "@/components/Blog/Blogs";
+import Hero from "@/components/Blog/Hero";
+import { getCategories, getPostsData } from "@/lib/api";
+import camelcaseKeys from "camelcase-keys";
+import Head from "next/head";
+import React from "react";
 
-import camelcaseKeys from 'camelcase-keys';
-
-import PostsList from "@/components/blog/posts-list";
-
-import { getPostsData, getCategories } from '@/lib/api'
-import CategoriesWidget from "@/components/blog/categories-widget";
-import SearchWidget from "@/components/blog/search-widget";
-
-export default function Blog({ posts, categories }) {
+const BlogLanding = ({ posts, categories, pagination }) => {
   return (
     <>
-      <section id="blog-roll" className="blog-roll-nav">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12">
-              <div className="section-title text-center">
-                <h2>All Blog Posts</h2>
-                <ul className="breadcrumb-nav">
-                  <li>
-                    <Link href="/">
-                      <a>Home</a>
-                    </Link></li>
-                  <li>All blog posts</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="blog-posts">
-        <div className="container">
-          <div className="row justify-content-center">
-            <PostsList posts={posts} />
-            <aside className="col-12 col-lg-4">
-              <SearchWidget />
-              <CategoriesWidget categories={categories} />
-            </aside>
-          </div>
-        </div>
-      </section>
+      <Head>
+        <title>
+          Causal: Feature flagging and A/B testing software for product dev
+          teams
+        </title>
+      </Head>
+      <Hero />
+      <Blogs posts={posts} categories={categories} pagination={pagination} />
     </>
-  )
-}
+  );
+};
+
+export default BlogLanding;
 
 export async function getStaticProps() {
-  const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY
-
+  const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
   if (butterToken) {
     try {
-      const blogPosts = (await getPostsData()).posts
-      const categories = await getCategories()
-
-      return { props: { posts: camelcaseKeys(blogPosts), categories } };
-    } catch (e) {
-      console.log("Could not get posts", e)
-
+      const blogPosts = await getPostsData();
+      const categories = await getCategories();
       return {
-        props: { posts: [], categories: [] }
-      }
+        props: {
+          posts: camelcaseKeys(blogPosts.posts),
+          categories,
+          pagination: {
+            nextPage: blogPosts.nextPage,
+            prevPage: blogPosts.prevPage,
+            count: blogPosts.count,
+          },
+        },
+        revalidate: 10,
+      };
+    } catch (e) {
+      return {
+        props: { posts: [], categories: [] },
+        revalidate: 10,
+      };
     }
   }
 
-  return { props: { posts: [], categories: [] } }
+  return { props: { posts: [], categories: [] }, revalidate: 10 };
 }
-

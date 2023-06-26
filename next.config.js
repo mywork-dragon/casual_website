@@ -1,5 +1,13 @@
 module.exports = {
   reactStrictMode: true,
+  env: {
+    EMAIL_TO: process.env.EMAIL_TO,
+    EMAIL_FROM: process.env.EMAIL_FROM,
+    EMAIL_SUBJECT: process.env.EMAIL_SUBJECT,
+    SMTP_SERVICE: process.env.SMTP_SERVICE,
+    SMTP_AUTH_USER: process.env.SMTP_AUTH_USER,
+    SMTP_AUTH_PASS: process.env.SMTP_AUTH_PASS,
+  },
   async rewrites() {
     return [
       {
@@ -27,7 +35,7 @@ module.exports = {
     )
   },
   images: {
-    domains: ["cdn.buttercms.com"],
+    domains: ["cdn.buttercms.com", "lh3.googleusercontent.com"],
   },
 };
 
