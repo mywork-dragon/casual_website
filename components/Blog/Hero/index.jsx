@@ -11,8 +11,7 @@ const Hero = () => {
               Causal <TextGraphic>Blog</TextGraphic>
             </h1>
             <p className="font-lora lg:max-w-401 text-base leading-6 sm:text-lg sm:leading-6.5 text-text-100 font-normal mt-2 sm:mt-4">
-              Ut enim ad minim veniam, quis umre nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo.
+              Updates on the company, our products, and the things we're thinking about.
             </p>
           </div>
           <div className="lg:max-w-2xl z-10">

@@ -73,7 +73,17 @@ const Sidebar = ({ setShowSidebar, navItems }) => {
                 rel="noreferrer"
                 className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
               >
-                Login
+                Sign In
+              </a>
+            </div>
+            <div className="w-full">
+              <a
+                href="https://tools.causallabs.io/signup"
+                target="_blank"
+                rel="noreferrer"
+                className="uppercase text-base font-bold leading-4 text-text-300 hover:text-primary-500"
+              >
+                Try it out
               </a>
             </div>
             <div className="w-full">

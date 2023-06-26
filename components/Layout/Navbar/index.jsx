@@ -30,7 +30,7 @@ const navItems = [
         href: "/blog",
       },
       {
-        name: "CONTACT",
+        name: "CONTACT US",
         href: "/contact",
       },
       // "CAREERS",
