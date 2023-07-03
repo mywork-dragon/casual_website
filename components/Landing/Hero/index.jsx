@@ -1,8 +1,12 @@
 import RoundedButton from "@/components/Button/Rounded";
 import TextGraphic from "@/components/TextGraphic";
 import React from "react";
+import { qb, useFeature, useSession } from "../../../causal";
 
 const Hero = () => {
+  console.log(qb().getFeature2);
+  const feature = useFeature(qb().getFeature2());
+  console.log(feature.featureName);
   return (
     <div className="w-full mt-12 sm:mt-24">
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
@@ -12,6 +16,7 @@ const Hero = () => {
               Product optimization <TextGraphic>in a box</TextGraphic> for{" "}
               <br className="hidden lg:inline-block" />
               data obsessed teams
+
             </h1>
             <p className="font-lora lg:max-w-401 text-base leading-6 sm:text-lg sm:leading-6.5 text-text-100 font-normal mt-2 sm:mt-4">
               Stop stitching together half a dozen tools. The most comprehensive

@@ -1,23 +1,27 @@
-import App from "next/app";
+import App, { AppContext, AppProps } from "next/app";
 import Head from "next/head";
 
 import { getMainMenu } from "@/lib/api";
-
-import "bootstrap/dist/css/bootstrap.css";
-import "@/css/lineicons.css";
-
-import "@/css/tiny-slider.min.css";
-import "@/css/main.css";
-import "@/css/global.css";
+import Banner from "@/components/Layout/Banner";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
-import Banner from "@/components/Layout/Banner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
+import { Session, SessionContext } from "../causal";
+import { getOrMakeDeviceId } from "../components/utils";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const _explicitDeviceId = router.query?.deviceId;
+  const explicitDeviceId = Array.isArray(_explicitDeviceId)
+    ? _explicitDeviceId[0]
+    : _explicitDeviceId;
+
+  const session = new Session({
+    deviceId: explicitDeviceId ?? getOrMakeDeviceId(),
+  });
+  
   const pageLayout = (
     <div className="w-full min-h-screen font-inter">
       <Navbar />
@@ -31,7 +35,7 @@ function MyApp({ Component, pageProps }) {
   );
 
   return (
-    <>
+    <SessionContext.Provider value={session}>
       <Head>
         <meta
           name="title"
@@ -45,8 +49,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="revisit-after" content="30 days" />
       </Head>
       {pageLayout}
-    </>
+    </SessionContext.Provider>
   );
 }
-
-export default MyApp;
