@@ -28,7 +28,7 @@ const Testimonial = () => {
                 </TextGraphic>
               </p>
               <p className="text-lg leading-6.5 text-text-300 text-left font-bold">
-                Co-Founder & Chief Data Officer, <br />JobCase
+                Co-Founder & Chief Data Officer, <br />Jobcase
               </p>
               </div>
             </div>

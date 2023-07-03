@@ -52,7 +52,7 @@ const HowItWorks = () => {
       <div className="w-full max-w-7xl px-3 sm:px-6 md:px-9 xl:px-6 mx-auto">
         <div className="text-center">
           <h2 className="text-text-300 text-2xl leading-8 sm:text-4.5xl sm:leading-11.5 font-extrabold">
-            So how does this <TextGraphic>actually work</TextGraphic>
+            So how does this <TextGraphic>actually work</TextGraphic>?
           </h2>
         </div>
         <div className="w-full mt-12 sm:mt-24">

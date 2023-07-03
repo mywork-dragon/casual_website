@@ -3,12 +3,7 @@ import { dateFormateHandler } from "@/lib/index";
 import React from "react";
 
 const Card = ({ title, index, author, summary, slug, published }) => {
-  let rotate = 1;
-  if (index === 1 || index % 4 === 0) {
-    rotate = -1;
-  } else if (index === 0 || index % 3 == 0 || index % 2 === 0) {
-    rotate = 1;
-  }
+  const rotate = index % 2 === 0 ? -1 : 1;
   let noSpace = false;
   if (
     index === 0 ||
