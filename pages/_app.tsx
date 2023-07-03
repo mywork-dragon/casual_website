@@ -10,6 +10,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 import { Session, SessionContext } from "../causal";
 import { getOrMakeDeviceId } from "../components/utils";
+import "bootstrap/dist/css/bootstrap.css";
+import "@/css/lineicons.css";
+
+import "@/css/tiny-slider.min.css";
+import "@/css/main.css";
+import "@/css/global.css";
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();

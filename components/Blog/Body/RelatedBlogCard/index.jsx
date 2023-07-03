@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-const RelatedBlogCard = ({ title, summary, slug }) => {
+const RelatedBlogCard = ({ title, summary, slug, index }) => {
+  const [reduceSpacing, setReduceSpacing] = useState(false);
+  const onWindowResize = () => {
+    setReduceSpacing(window.innerWidth > 767 && index && index % 3 === 0);
+  };
+  useEffect(() => {
+    onWindowResize();
+    window.addEventListener("resize", onWindowResize);
+
+    return () => window.removeEventListener("resize", onWindowResize);
+  }, []);
   return (
     <div
-      style={{ backgroundImage: "url(/images/blog/pattern.png)" }}
+      style={{
+        backgroundImage: "url(/images/blog/pattern.png)",
+        marginLeft: reduceSpacing ? "0" : "",
+      }}
       className="!px-7 !py-5 border border-text-300 rounded-md hover:bg-primary-500 transition-all duration-300 cursor-pointer !mt-8"
     >
       <Link href={`/blog/${slug}`}>

@@ -59,7 +59,7 @@ const BlogBody = ({ post, relatedBlogs }) => {
               </h1>
               <div className="w-full grid grid-cols-1 md:grid-cols-3 md:space-x-6">
                 {filteredRelatedBlogs?.map((blog, index) => (
-                  <RelatedBlogCard {...blog} key={index} />
+                  <RelatedBlogCard {...blog} key={index} index={index} />
                 ))}
               </div>
             </div>
