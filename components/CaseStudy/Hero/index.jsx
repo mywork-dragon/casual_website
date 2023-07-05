@@ -7,6 +7,7 @@ const CaseStudyHero = ({
   person_name,
   person_title,
   person_headshot,
+  company_logo_image,
 }) => {
   return (
     <div className="w-full mt-12 sm:mt-24">
@@ -34,7 +35,7 @@ const CaseStudyHero = ({
                 {person_title}
               </p>
               <img
-                src="/images/caseStudy/jobCase.png"
+                src={company_logo_image}
                 className="h-auto object-cover w-24 !mt-2"
               />
             </div>
