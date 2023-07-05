@@ -34,10 +34,12 @@ const CaseStudyHero = ({
                 <br></br>
                 {person_title}
               </p>
-              <img
-                src={company_logo_image}
-                className="h-auto object-cover w-24 !mt-2"
-              />
+              {!!company_logo_image?.length && (
+                <img
+                  src={company_logo_image}
+                  className="h-auto object-cover w-24 !mt-2"
+                />
+              )}
             </div>
             <div className="max-w-md w-full">
               <img
