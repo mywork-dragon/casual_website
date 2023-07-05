@@ -1,5 +1,6 @@
 import CaseStudyBody from "@/components/CaseStudy/Body";
 import CaseStudyHero from "@/components/CaseStudy/Hero";
+import BuildShip from "@/components/BuildShip";
 import { getCaseStudyPage } from "@/lib/api";
 import Head from "next/head";
 import React from "react";
@@ -15,6 +16,10 @@ const CaseStudy = ({ data: { fields } }) => {
       </Head>
       <CaseStudyHero {...fields} />
       <CaseStudyBody {...fields} />
+      <div className="-mt-24 sm:mt-0">
+        <BuildShip />
+      </div>
+
     </>
   );
 };

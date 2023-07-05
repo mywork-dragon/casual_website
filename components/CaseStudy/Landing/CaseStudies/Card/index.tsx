@@ -27,16 +27,6 @@ const Card = ({
       className="px-8 mt-10 sm:ml-10 py-7 bg-white rounded-3xl shadow-card flex flex-col items-start justify-between"
     >
       <div>
-        <div className="flex items-center space-x-3">
-          <div>
-            <p className="font-inter text-text-300 font-bold text-xs leading-4">
-              {date.monthName} {date.dateNumber}, {date.fullYear}
-            </p>
-            <p className="font-inter text-text-300 font-bold text-xs leading-4 mt-0.5">
-              {person_name}
-            </p>
-          </div>
-        </div>
         <div className="mt-7">
           <h1 className="font-inter font-extrabold text-2xl text-text-300 leading-7">
             {post_title.split("{{company_name}}").join(company_name)}

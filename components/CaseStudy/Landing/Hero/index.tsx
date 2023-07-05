@@ -8,11 +8,10 @@ const Hero = () => {
         <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center z-10">
           <div className="lg:max-w-lg mt-8 sm:mt-24 lg:mt-0">
             <h1 className="uppercase text-2xl leading-8 sm:text-4xl sm:leading-10 lg:text-4.5xl font-extrabold lg:leading-12.5 text-text-300">
-              Causal <TextGraphic>Case Study</TextGraphic>
+              Case Studies
             </h1>
             <p className="font-lora lg:max-w-401 text-base leading-6 sm:text-lg sm:leading-6.5 text-text-100 font-normal mt-2 sm:mt-4">
-              Updates on the company, our products, and the things we're
-              thinking about.
+              Stories of how Causal helps product dev teams experiment and win.
             </p>
           </div>
           <div className="lg:max-w-2xl z-10">

@@ -1,5 +1,6 @@
 import CaseStudyLandingHero from "@/components/CaseStudy/Landing/Hero";
 import CaseStudies from "@/components/CaseStudy/Landing/CaseStudies";
+import BuildShip from "@/components/BuildShip";
 import { getCaseStudyPages } from "@/lib/api";
 import Head from "next/head";
 import React from "react";
@@ -15,6 +16,9 @@ const CaseStudy = ({ data }) => {
       </Head>
       <CaseStudyLandingHero />
       <CaseStudies data={data} />
+      <div className="-mt-24 sm:mt-0">
+        <BuildShip />
+      </div>
     </>
   );
 };
