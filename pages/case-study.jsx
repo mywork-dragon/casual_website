@@ -1,10 +1,11 @@
-import CaseStudyBody from "@/components/CaseStudy/Body";
-import CaseStudyHero from "@/components/CaseStudy/Hero";
-import { getCaseStudyPage } from "@/lib/api";
+import CaseStudyLandingHero from "@/components/CaseStudy/Landing/Hero";
+import CaseStudies from "@/components/CaseStudy/Landing/CaseStudies";
+import BuildShip from "@/components/BuildShip";
+import { getCaseStudyPages } from "@/lib/api";
 import Head from "next/head";
 import React from "react";
 
-const CaseStudy = ({ data: { fields } }) => {
+const CaseStudy = ({ data }) => {
   return (
     <>
       <Head>
@@ -13,8 +14,11 @@ const CaseStudy = ({ data: { fields } }) => {
           teams
         </title>
       </Head>
-      <CaseStudyHero {...fields} />
-      <CaseStudyBody {...fields} />
+      <CaseStudyLandingHero />
+      <CaseStudies data={data} />
+      <div className="-mt-24 sm:mt-0">
+        <BuildShip />
+      </div>
     </>
   );
 };
@@ -25,7 +29,7 @@ export async function getStaticProps() {
   const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
   if (butterToken) {
     try {
-      const caseStudyPage = await getCaseStudyPage();
+      const caseStudyPage = await getCaseStudyPages();
       return {
         props: {
           data: caseStudyPage,

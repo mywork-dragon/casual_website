@@ -7,6 +7,7 @@ const CaseStudyHero = ({
   person_name,
   person_title,
   person_headshot,
+  company_logo_image,
 }) => {
   return (
     <div className="w-full mt-12 sm:mt-24">
@@ -17,26 +18,30 @@ const CaseStudyHero = ({
               {post_title.split("{{company_name}}").join(company_name)}
             </h1>
           </div>
-          <div className="relative">
-            <div className="hidden sm:block absolute max-w-xl sm:-left-48 lg:left-[-475px] -top-16">
+          <div className="relative flex justify-center items-center">
+            <div className="hidden sm:block absolute max-w-xl sm:-left-12 lg:left-[-140px] -top-24">
               <img
                 src="/images/caseStudy/speech.png"
                 className="w-full h-auto object-cover"
               />
             </div>
-            <div className="sm:absolute max-w-401 sm:-left-24 lg:-left-96 top-0 flex flex-col items-center justify-center">
-              <p className="font-lora text-text-300 text-base leading-6 text-center -rotate-3">
-                {quote}
-              </p>
-              <p className="text-center font-inter text-text-300 font-bold text-base leading-6 -rotate-3">
-                {person_name}
-                <br></br>
-                {person_title}
-              </p>
-              <img
-                src="/images/caseStudy/jobCase.png"
-                className="h-auto object-cover w-24 !mt-2"
-              />
+            <div className="relative w-full h-full flex justify-center items-center">
+              <div className="relative max-w-401 sm:left-6 lg:-left-6 sm:-top-32 lg:-top-24 flex flex-col items-center justify-center">
+                <p className="font-lora text-text-300 text-base leading-6 text-center -rotate-3">
+                  {quote}
+                </p>
+                <p className="text-center font-inter text-text-300 font-bold text-base leading-6 -rotate-3">
+                  {person_name}
+                  <br></br>
+                  {person_title}
+                </p>
+                {!!company_logo_image?.length && (
+                  <img
+                    src={company_logo_image}
+                    className="h-auto object-cover w-24 !mt-2"
+                  />
+                )}
+              </div>
             </div>
             <div className="max-w-md w-full">
               <img
