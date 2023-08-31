@@ -32,75 +32,57 @@ export interface ImpressionTime {
 }
 
 
-/** 
-* Wraps a rating box that we can put on various product pages
-* to collect ratings from our users
-*/
-export class RatingBox extends FeatureBase {
+export class Hero extends FeatureBase {
     /** 
-    * The product that we are collecting ratings for
-    */
-    readonly product: string = "";
-    /** 
-     * The text next to the stars that prompts the visitor to rate the product
+     * title copy
      *
-     *  Control: "Rate this product!"
+     *  Control: "PRODUCT OPTIMIZATION __IN A BOX__ FOR\\nDATA OBSESSED TEAMS"
      */
-    readonly callToAction: string = "Rate this product!";
+    readonly titleCopy: string = "PRODUCT OPTIMIZATION __IN A BOX__ FOR\\nDATA OBSESSED TEAMS";
+    /** 
+     * subtitle copy
+     *
+     *  Control: "Stop stitching together half a dozen tools. The most comprehensive session tracking, feature management, and experimentation software."
+     */
+    readonly subtitleCopy: string = "Stop stitching together half a dozen tools. The most comprehensive session tracking, feature management, and experimentation software.";
+    /** 
+     * demo button copy
+     *
+     *  Control: "Book Demo"
+     */
+    readonly demoButtonCopy: string = "Book Demo";
+    /** 
+     * dev sign up button copy
+     *
+     *  Control: "Try It Out"
+     */
+    readonly devSignUpButtonCopy: string = "Try It Out";
 
     /**
-     * Occurs each time a rating is collected
+     * Occurs each time a user taps the Demo button
     */
-    signalRating( { stars } 
-        : {  stars : number  } ) : void {
-            signalInstance(this, "Rating", arguments[0]);
+    signalDemoButtonClick(): void {
+      signalInstance(this, "DemoButtonClick", {} )
     }
     /** 
-     * Occurs each time a rating is collected
+     * Occurs each time a user taps the Demo button
      */
-    static signalRating( sessionKeys: SessionKeys | Session, impressionId : string,  { stars } 
-        : {  stars : number  } ) : void
- {
-        signalStatic("RatingBox", "Rating", [...arguments]);
+    static signalDemoButtonClick(sessionKeys: SessionKeys | Session, impressionId : string): void
+     {
+        signalStatic("Hero", "DemoButtonClick", [...arguments]);
     }
-  }
-
-/** 
-* An empty feature to use only as a kill switch
-*/
-export class ProductInfo extends FeatureBase {
-
-  }
-
-/** 
-* Another feature just for demonstration purposes
-*/
-export class Feature2 extends FeatureBase {
-    /** 
-    * Example args
-    */
-    readonly exampleArg: string = "";
-    /** 
-     * Example output
-     *
-     *  Control: "Example output"
-     */
-    readonly exampleOutput: string = "Example output";
-
     /**
-     * Example event
+     * Occurs each time a user taps the Dev Sign Up button
     */
-    signalExampleEvent( { data } 
-        : {  data : string  } ) : void {
-            signalInstance(this, "ExampleEvent", arguments[0]);
+    signalDevSignUpButtonClick(): void {
+      signalInstance(this, "DevSignUpButtonClick", {} )
     }
     /** 
-     * Example event
+     * Occurs each time a user taps the Dev Sign Up button
      */
-    static signalExampleEvent( sessionKeys: SessionKeys | Session, impressionId : string,  { data } 
-        : {  data : string  } ) : void
- {
-        signalStatic("Feature2", "ExampleEvent", [...arguments]);
+    static signalDevSignUpButtonClick(sessionKeys: SessionKeys | Session, impressionId : string): void
+     {
+        signalStatic("Hero", "DevSignUpButtonClick", [...arguments]);
     }
   }
 
@@ -109,9 +91,7 @@ export class Feature2 extends FeatureBase {
 
 /** @deprecated */
 export const allFeatureTypes = {
-    RatingBox,
-    ProductInfo,
-    Feature2,
+    Hero,
 
     };
 
@@ -154,8 +134,7 @@ function sseUrl( s : Partial<SessionArgs> ) {
   let sseUrl = network.getBaseUrl().replace(
         /\/?$/,
         "/sse?id=");
-  if ( s.deviceId != undefined)
-      sseUrl += s.deviceId + "+";
+  sseUrl += s.deviceId;
   return sseUrl;
 }
 
@@ -170,28 +149,8 @@ function sseUrl( s : Partial<SessionArgs> ) {
 *
 */
 class Query<T extends FeatureNames>{
-    /** 
-    * Wraps a rating box that we can put on various product pages
-    * to collect ratings from our users
-    */
-    getRatingBox( { product } 
-      : {  product : string  } )
-        : Query<T | "RatingBox"> {
-        return this;
-    }
-    /** 
-    * An empty feature to use only as a kill switch
-    */
-    getProductInfo()
-        : Query<T | "ProductInfo"> {
-        return this;
-    }
-    /** 
-    * Another feature just for demonstration purposes
-    */
-    getFeature2( { exampleArg } 
-      : {  exampleArg : string  } )
-        : Query<T | "Feature2"> {
+    getHero()
+        : Query<T | "Hero"> {
         return this;
     }
 
@@ -214,9 +173,7 @@ class Query<T extends FeatureNames>{
  * The state of the feature flags when the FDL was compiled to this file.
  */
 export const defaultFlags: Flags<FeatureNames> = {
-    RatingBox: true,
-    ProductInfo: true,
-    Feature2: true,
+    Hero: true,
 
 };
 
@@ -357,7 +314,10 @@ export class Session extends SessionEvents {
    * @returns the serialized JSON
    */
   toJSON(): SessionJSON {
-    if (this._.commSnapshot.fetches == 0) {
+    if (
+      this._.commSnapshot.fetches == 0 &&
+      this._.cache.cacheStats.hits.size == 0
+    ) {
       log.warn(
         "Session.toJSON() called before a call to requestImpression() or requestCacheFill()"
       );

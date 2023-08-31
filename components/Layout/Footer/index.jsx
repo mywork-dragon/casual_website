@@ -4,8 +4,12 @@ import Link from "next/link";
 const footerItems = [
   [
     {
-      name: "Product",
-      href: "/product",
+      name: "Experimentation",
+      href: "/experimentation",
+    },
+    {
+      name: "Machine Learning",
+      href: "/ml",
     },
     {
       name: "About",

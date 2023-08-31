@@ -1,54 +1,30 @@
-## code: language=GraphQL
-## From the hello-causal directory, type:
-##
-##  ./causalc --push-fdl --typescript demo-ui/components/causal.ts fdl/causal.fdl
-##
+
+## causalc --push-fdl --token 7d42b645-aafd-4c5a-af02-b4264c16abac --typescript ./components/causal.ts fdl/causal.fdl
 ## to compile.
 
 
-feature ExampleFeature {
+feature Hero {
     output {
-        "the button text"
-        callToActionCopy: String! = "Click Me!"
+        "title copy"
+        titleCopy: String! = "PRODUCT OPTIMIZATION __IN A BOX__ FOR\nDATA OBSESSED TEAMS"
 
-        "descriptive text above the button"
-        descriptiveCopy: String! = "This is an irresistible button:"
+        "subtitle copy"
+        subtitleCopy: String! = "Stop stitching together half a dozen tools. The most comprehensive session tracking, feature management, and experimentation software."
 
-        "the button width"
-        width: String! = "150px"
+        "demo button copy"
+        demoButtonCopy: String! = "Book Demo"
 
-        "the button height"
-        height: String! = "40px"
-
-        "the button background color // DEMO INSTRUCTIONS: Change the value below from 'red' to 'green'"
-        backgroundColor: String! = "red"
-
-        "the button font color"
-        fontColor: String! = "#ffffff"
+        "dev sign up button copy"
+        devSignUpButtonCopy: String! = "Try It Out"
 
     }
 
-    "Occurs each time a user taps the button"
-    event ButtonClick {
-    }
-}
-
-feature CrossSellFeature {
-    args {
-        "the product name the user is on to personalize recommendations"
-        productName: String!
-
-        "the day of the week for model personalization"
-        dayOfWeek: Int!
-    }
-    output {
-        "the best selling products are our default recommendations"
-        results: [String!]! = ["milk", "eggs", "bread"]
+    "Occurs each time a user taps the Demo button"
+    event DemoButtonClick {
     }
 
-    "Occurs each time a user clicks on a cross sell item"
-    event CrossSellItemClick{
-        "The product clicked"
-        productName: String!
+    "Occurs each time a user taps the Dev Sign Up button"
+    event DevSignUpButtonClick {
     }
+
 }

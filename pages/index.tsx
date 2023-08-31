@@ -7,6 +7,15 @@ import Testimonial from "@/components/Landing/Testimonial";
 import TextGraphic from "@/components/TextGraphic";
 import Head from "next/head";
 import React from "react";
+import { GetServerSidePropsContext } from "next";
+import {
+  qb,
+  Session,
+  SessionContext,
+  SessionJSON,
+  useSessionJSON,
+} from "../causal";
+import { getOrMakeDeviceId } from "@/components/utils";
 
 const sections = [
   {
@@ -40,9 +49,23 @@ const sections = [
   },
 ];
 
-const LandingPage = () => {
+type PageProps = {
+  sessionJson: SessionJSON;
+};
+
+export async function getServerSideProps(
+  context: GetServerSidePropsContext
+): Promise<{ props: PageProps }> {
+  const deviceId = getOrMakeDeviceId(context);
+  const session = Session.fromDeviceId(deviceId, context.req);
+  await session.requestCacheFill(qb().getHero());
+
+  return { props: { sessionJson: session.toJSON() } };
+}
+const LandingPage = (props: PageProps) => {
+  const session = useSessionJSON(props.sessionJson);
   return (
-    <>
+    <SessionContext.Provider value={session}>
       <Head>
         <title>
           Causal: Feature flagging and A/B testing software for product dev
@@ -62,7 +85,7 @@ const LandingPage = () => {
       <HowItWorks />
       <ProductTeam />
       <BuildShip />
-    </>
+    </SessionContext.Provider>
   );
 };
 

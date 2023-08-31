@@ -7,8 +7,28 @@ import Head from "next/head";
 import ErrorPage from "next/error";
 import React from "react";
 import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
 
-const CaseStudy = ({ data: { fields } }) => {
+type CaseStudyProps = {
+  data: {
+    fields: {
+      post_title: string;
+      company_name: string;
+      quote: string;
+      person_name: string;
+      person_title: string;
+      person_headshot: string;
+      company_logo_image: string;
+      background_copy: string;
+      goals_copy: string;
+      challenges_copy: string;
+      solutions_copy: string;
+      outcomes_copy: string;
+    };
+  };
+};
+
+const CaseStudy = ({ data: { fields } }: CaseStudyProps) => {
   const router = useRouter();
   if (router.isFallback) {
     return <Preloader />;
@@ -36,9 +56,11 @@ const CaseStudy = ({ data: { fields } }) => {
 
 export default CaseStudy;
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps<CaseStudyProps> = async ({
+  params,
+}) => {
   const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-  if (butterToken) {
+  if (butterToken && params) {
     try {
       const caseStudyPage = await getCaseStudyPage(params.slug);
       return {
@@ -59,7 +81,7 @@ export async function getStaticProps({ params }) {
     props: { data: {} },
     revalidate: 10,
   };
-}
+};
 
 export async function getStaticPaths() {
   return {

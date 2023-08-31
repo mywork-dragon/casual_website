@@ -1,23 +1,27 @@
-import App, { AppContext, AppProps } from "next/app";
+import { AppProps } from "next/app";
 import Head from "next/head";
-
-import { getMainMenu } from "@/lib/api";
 import Banner from "@/components/Layout/Banner";
-import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Navbar from "@/components/Layout/Navbar";
 import { useRouter } from "next/router";
+import { ToastContainer } from "react-toastify";
 import { Session, SessionContext } from "../causal";
 import { getOrMakeDeviceId } from "../components/utils";
+
+// adding line between imports keeps "organize imports" command from moving them around. The order matters b/c of the css cascade
+import "react-toastify/dist/ReactToastify.css";
+
 import "bootstrap/dist/css/bootstrap.css";
+
 import "@/css/lineicons.css";
 
 import "@/css/tiny-slider.min.css";
+
 import "@/css/main.css";
+
 import "@/css/global.css";
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const _explicitDeviceId = router.query?.deviceId;
   const explicitDeviceId = Array.isArray(_explicitDeviceId)
@@ -27,7 +31,7 @@ export default function MyApp({ Component, pageProps }) {
   const session = new Session({
     deviceId: explicitDeviceId ?? getOrMakeDeviceId(),
   });
-  
+
   const pageLayout = (
     <div className="w-full min-h-screen font-inter">
       <Navbar />

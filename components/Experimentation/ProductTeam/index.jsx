@@ -36,7 +36,7 @@ const ProductTeam = () => {
               </p>
               <p className="font-bold mt-1 sm:mt-2 text-xs sm:text-base leading-3 sm:leading-6 text-text-300 -rotate-2">
                 Tony Deigh<br></br>
-                Co-Founder & Chief Data Officer, JobCase
+                Co-Founder & Chief Data Officer, Jobcase
               </p>
             </div>
             <div className="relative -top-56 sm:top-[-420px] -left-24 md:left-auto md:-top-56 z-[-1]">

@@ -15,8 +15,7 @@ const Banner = () => {
           />
           <div className="sm:absolute sm:-mt-12 md:-mt-8 flex flex-col items-center">
             <p className="text-center max-w-lg font-lora font-normal text-sm md:text-base lg:text-lg text-text-300">
-              Get the latest tips on how to build, ship and optimize your
-              consumer tech products, delivered straight to your inbox.
+              Get the latest tips – on how to build, ship and optimize products – delivered straight to your inbox.
             </p>
             <div className="w-full">
               <MailchimpSubscribe

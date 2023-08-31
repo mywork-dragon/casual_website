@@ -40,8 +40,7 @@ const BlogBody = ({ post, relatedBlogs }) => {
                   {author?.first_name || " "} {author?.last_name || " "}
                 </p>
                 <p className="font-inter text-secondary-600 font-bold text-sm leading-4 mt-1">
-                  {date.monthName} {date.dateNumber}, {date.fullYear} -{" "}
-                  <span className="text-text-300 uppercase">7 min read</span>
+                  {date.monthName} {date.dateNumber}, {date.fullYear}
                 </p>
               </div>
             </div>

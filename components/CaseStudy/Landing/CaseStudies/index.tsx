@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 
-const CaseStudies = ({ data }) => {
+const CaseStudies = ({
+  data,
+}: {
+  data: {
+    fields: {
+      person_name: string;
+      quote: string;
+      post_title: string;
+      company_name: string;
+    };
+    index: number;
+    published: Date;
+    slug: string;
+  }[];
+}) => {
   const [render, setRender] = useState(false);
   useEffect(() => {
     setRender(true);

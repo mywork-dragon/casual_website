@@ -7,7 +7,17 @@ import Sidebar from "./Sidebar";
 const navItems = [
   {
     name: "PRODUCT",
-    href: "/product",
+    options: [
+      // "PRODUCT",
+      {
+        name: "Experimentation",
+        href: "/experimentation",
+      },
+      {
+        name: "Machine Learning",
+        href: "/ml",
+      },
+    ],
   },
   {
     name: "CASE STUDIES",

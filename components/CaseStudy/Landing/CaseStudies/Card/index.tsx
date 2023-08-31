@@ -7,6 +7,16 @@ const Card = ({
   index,
   published,
   slug,
+}: {
+  fields: {
+    person_name: string;
+    quote: string;
+    post_title: string;
+    company_name: string;
+  };
+  index: number;
+  published: Date;
+  slug: string;
 }) => {
   const rotate = index % 2 === 0 ? -1 : 1;
   let noSpace = false;
